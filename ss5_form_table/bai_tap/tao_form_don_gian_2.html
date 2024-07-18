@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký Học Viên</title>
+    <style>
+        .tieude {
+            color: blue;
+            font-weight: bolder;
+            background-color: lightgreen;
+            font-size: larger;
+        }
+        .text2 {
+            Color: blue;
+        }
+    </style>
+</head>
+<form action="tao_form_don_gian_2.html" name="dangkyhocvien" method="get" style="background-color:lightgoldenrodyellow;margin-right:1100px">
+    <p class="tieude">ĐĂNG KÝ HỌC VIÊN</p>
+    <table>
+        <tr>
+            <td class="text2">Họ và Tên</td>
+            <td colspan="2"><input type="text" name="hovaten"/></td>
+        </tr>
+        <tr>
+            <td class="text2">Ngày Sinh</td>
+            <td colspan="2"><input type="date" name="Birthday"/></td>
+        </tr>
+        <tr>
+            <td class="text2">Giới Tính</td>
+            <td><input type="radio" name="Giới Tính" Value="Nam"/>Nam</td>
+            <td><input type="radio" name="Giới Tính" Value="Nữ"/>Nữ</td>
+        </tr>
+        <tr>
+            <td class="text2">Địa Chỉ</td>
+            <td colspan="2"><textarea></textarea></td>
+        </tr>
+        <tr>
+            <td class="text2">Lớp</td>
+            <td colspan="2"><select Name="Lớp">
+                <option selected=selected Value="--chọn lớp">--Chọn Lớp--</option>
+                <option Value="10a1">10a1</option>
+                <option Value="10a2">10a2</option>
+                <option Value="10a3">10a3</option>
+            </select> </td>
+        </tr>
+        <tr>
+            <td class="text2">Email</td>
+            <td colspan="2"><input type="email"</td>
+        </tr>
+        <tr>
+            <td class="text2">Điện Thoại</td>
+            <td colspan="2"><input type="number"</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" Value="Đăng Ký"></td>
+            <td><input type="reset" Value="Nhập Lại"></td>
+        </tr>
+    </table>
+</form>
+<body>
+
+</body>
+</html>

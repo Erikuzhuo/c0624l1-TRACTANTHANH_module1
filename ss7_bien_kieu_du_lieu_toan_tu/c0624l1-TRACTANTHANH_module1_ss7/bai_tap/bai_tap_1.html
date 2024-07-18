@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 1</title>
+</head>
+<body>
+<h2 style=" line-height: 5px">Student Examination Score</h2>
+<p style="font-size: 15px;color: red; line-height: 5px">Max of 10</p>
+<form action="bai_tap_1.html">
+<table style="border-collapse: collapse; vertical-align: top; text-align: left" >
+    <tr>
+        <th>Psychology</th>
+        <th><label><input type="number" id='Psychology'></label></th>
+    </tr>
+    <tr>
+        <th>Chemistry</th>
+        <th><label><input type="number" id='Chemistry'></label></th>
+    </tr>
+    <tr>
+        <th>Biology</th>
+        <th><label><input type="number" id='Biology'></label></th>
+    </tr>
+</table>
+<br>
+<input type="reset" value="Reset"/> <button type="button" onclick="Total()">Result</button>
+<p id="total">Tổng Điểm:</p>
+<p id="average">Điểm Trung Bình:</p>
+</form>
+<script>
+    function Total(){
+    let phy = parseFloat(document.getElementById('Psychology').value);
+    let che = parseFloat(document.getElementById('Chemistry').value);
+    let bio = parseFloat(document.getElementById('Biology').value);
+    if (phy<= 10 && che<=10 && bio<=10){
+        let sum = phy + che + bio
+        let average = (phy + che + bio) / 3
+        document.getElementById('total').innerText = 'Total:' + sum;
+        document.getElementById('average').innerText = 'Average:' + average;
+    }else{
+        alert("Wrong Input - Maximum of 10")
+        }
+    }
+</script>
+
+<h2>Temperature Unit Conversation</h2>
+<form>
+    Input <label><input type="number" id="Celsius1"> °C</label><br>
+    Input <label><input type="number" id="Fahrenheit1"> °F</label><br>
+    <br>
+    <button type="button" onclick="ConvertF()">Convert to Fahrenheit</button>
+    <button type="button" onclick="ConvertC()">Convert to Celsius</button>
+    <button type="reset" id="reset">Reset</button>
+<script>
+    function ConvertF() {
+        let cel = document.getElementById("Celsius1").value;
+        let fahrenheit = (cel/5*9)+32
+        document.getElementById("Fahrenheit1").value=fahrenheit
+    }
+    function ConvertC() {
+        let fah = document.getElementById("Fahrenheit1").value;
+        let celsius = (fah - 32) / 9 * 5
+        document.getElementById("Celsius1").value = celsius
+    }
+</script>
+</form>
+
+<h2>Area of Circle</h2>
+<form>
+    <table>
+    <tr>
+        <td>Radius: <br>Area of Circle: <br>Circumference: </td>
+        <td><label><input type="number" id="radius"></label><br><label><input type="number" id="ac"/></label><br><label><input type="number" id="ci"/></label></td>
+    </tr>
+    </table>
+    <lable><input type="button" onclick="Area()" Value="Calculate"></lable>
+    <label><input type="reset" value="Reset"></label>
+</form>
+<script>
+    function Area(){
+        let rad=document.getElementById("radius").value;
+        let squ=rad * Math.PI* Math.PI
+        let aro=rad*2*Math.PI
+        document.getElementById("ac").value=squ
+        document.getElementById("ci").value=aro
+        Math.round
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Move The Ball</title>
+</head>
+<body>
+<img src="ball.jpg" id="ball" style="width: 150px">
+<p style="font-weight: bold">Click button below to move the image to right</p>
+<button type="button" onclick="moveright()">Click Me</button>
+<script>
+    let ball = document.getElementById('ball')
+    function init() {
+        ball.style.position = 'relative';
+        ball.style.left = '0px'
+    }
+    function moveright(){
+        ball.style.left= parseInt(ball.style.left)+10+'px'
+    }
+    window.onload=init()
+</script>
+</body>
+</html>

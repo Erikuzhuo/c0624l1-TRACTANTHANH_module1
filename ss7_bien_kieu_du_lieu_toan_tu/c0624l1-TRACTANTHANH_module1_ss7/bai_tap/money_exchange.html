@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Money Exchange</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse
+        }
+
+        tr {
+            text-align: center;
+            font-weight: bold
+        }
+        .convert{
+            background-color: mediumpurple;
+        }
+    </style>
+</head>
+<body>
+<form action="money_exchange.html">
+    <table>
+        <tr>
+            <td><p>Amount</p><label><input type="number" id="amount"></label></td>
+            <td><p>From Currency</p><label><select id="from">
+                <option>VND</option>
+                <option>USD</option>
+            </select></label></td>
+            <td><p>To Currency</p><label><select id="to">
+                <option>VND</option>
+                <option>USD</option>
+            </select></label></td>
+            <td><label><input class="convert" type="button" value="Convert" onclick="Convert()"> <input type="reset"
+                                                                                        value="Reset"></label></td>
+        </tr>
+    </table>
+    <p style="font-weight: bold;color: blue" id="result">Result:</p>
+</form>
+<script>
+    function Convert() {
+        let org = document.getElementById("from").value;
+        let res = document.getElementById("to").value;
+        let amo = document.getElementById("amount").value;
+        let conv;
+        if(org === "USD" && res === "VND") {
+            conv = amo * 25416.4
+            document.getElementById("result").innerHTML = "Result: " + conv.toLocaleString() + " " + document.getElementById("to").value
+            }else if (org === "VND" && res === "USD") {
+                conv = amo / 25416.4
+                document.getElementById("result").innerHTML = "Result: " + conv.toLocaleString() + " " + document.getElementById("to").value
+            }else {
+                alert("Wrong Currency Choice")
+            }
+    }
+</script>
+</body>
+</html>

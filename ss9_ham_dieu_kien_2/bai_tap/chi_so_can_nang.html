@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Chỉ Số Cân Nặng Cơ Thể</title>
+    <style>
+        .text{
+            font-family: Calibri,serif;
+            font-weight: bold;
+        }
+        .result{
+            font-family: Cambria,serif;
+        }
+        button{
+            background-color: gray;
+            font-weight: bolder;
+            border-style:inset;
+        }
+
+    </style>
+</head>
+<body>
+<h2>Chỉ Số Cân Nặng Cơ Thể BMI</h2>
+Please Input Your Weight <label><input type="number" id="weight" class="text"> Kg<br></label>
+Please Input Your Height <label><input type="number" id="height" class="text"> m<br></label>
+<button type="button" id="calculate" onclick="calculate()">Calculate BMI</button>
+<p id="result" class="result">Result: </p>
+<script>
+    function calculate() {
+    let weight = document.getElementById('weight').value;
+    let height = document.getElementById("height").value;
+    let bmi = weight / (height**2)
+            if (bmi < 18){
+                document.getElementById('result').innerHTML= `Result: ${bmi.toFixed(2)} - Underweight`;
+                document.getElementById('result').style.color="#EEC900";
+                document.getElementById('result').style.background="#1C1C1C";
+
+            }else if (bmi < 25.0){
+                document.getElementById('result').innerHTML=`Result: ${bmi.toFixed(2)} - Normal`;
+                document.getElementById('result').style.color="#00FF00";
+                document.getElementById('result').style.background="#1C1C1C";
+
+            }else if (bmi < 30.0){
+                document.getElementById('result').innerHTML=`Result: ${bmi.toFixed(2)} - Overweight`;
+                document.getElementById('result').style.color="#FF9999";
+                document.getElementById('result').style.background="#1C1C1C";
+
+            }else{
+                document.getElementById('result').innerHTML=`Result: ${bmi.toFixed(2)} - Obese`;
+                document.getElementById('result').style.color="#FF0000";
+                document.getElementById('result').style.background="#1C1C1C";
+            }
+    }
+</script>
+</body>
+</html>

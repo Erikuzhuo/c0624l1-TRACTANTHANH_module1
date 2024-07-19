@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 2</title>
+    <style>
+        sub,sup{
+            font-size: x-small
+        }
+    </style>
+</head>
+<body>
+<h2>Bài 1</h2>
+Nhiệt Độ: <input type="number" id="nhietDo"/>
+<select id="loaiNhiet">
+    <option value="Loại">Loại</option>
+    <option value="°C">°C</option>
+    <option value="°F">°F</option>
+</select>
+<p id="result" style="font-weight: bolder;color: blue">Kết Quả</p>
+<script>
+    document.getElementById('loaiNhiet').addEventListener('change',convert)
+    document.getElementById('nhietDo').addEventListener('change',convert)
+    function convert() {
+        let loaiNhiet=document.getElementById("loaiNhiet").value;
+        let chiSo = document.getElementById("nhietDo").value;
+        let doC= (chiSo*(9/5)+32);
+        let doF= (chiSo-32/(9/5));
+            if (loaiNhiet === "°C") {
+                document.getElementById('result').innerHTML = 'Kết Quả ' + doF.toFixed(2) + ' Độ F';
+            } else if (loaiNhiet === "°F") {
+                document.getElementById('result').innerHTML = 'Kết Quả ' + doC.toFixed(2) + ' Độ C';
+            }else{}
+        }
+</script>
+
+<h2>Bài 2</h2>
+Độ Dài: <input type="number" id="doDai"/>
+<select id="donVi">
+    <option value="donVi">Loại</option>
+    <option value="m">m</option>
+    <option value="ft">ft</option>
+</select>
+<p id="result2" style="font-weight: bolder;color: red">Kết Quả</p>
+<script>
+    document.getElementById('donVi').addEventListener('change',convert2)
+    document.getElementById('doDai').addEventListener('change',convert2)
+    function convert2() {
+        let donVi =  document.getElementById("donVi").value;
+        let doDai = document.getElementById("doDai").value;
+        let meter = doDai / 3.2808;
+        let feet = doDai * 3.2808;
+        if (doDai >= 0) {
+            if (donVi === "m") {
+                document.getElementById('result2').innerHTML = 'Kết Quả ' + feet.toFixed(2) + ' Feet';
+            } else if (donVi === "ft") {
+                document.getElementById('result2').innerHTML = 'Kết Quả ' + meter.toFixed(2) + ' Meter';
+            }else{}
+        } else {
+            alert('Độ dài không có số Âm, Xin mời nhập lại!')
+        }
+    }
+</script>
+
+<h2>Bài 3</h2>
+Chiều Dài Cạnh A: <input type="number" id="chieuDaiCanh"> meter<br>
+<p id="result3">Diện Tích Hình Vuông: </p>
+<button type="button" onclick="calculate()"> Tính Diện Tích Hình Vuông</button>
+<script>
+    function calculate(){
+        let canh=document.getElementById('chieuDaiCanh').value;
+        if(canh>0){
+            let dienTich=canh**2 + ' m<sup>2</sup>'
+            document.getElementById('result3').innerHTML= 'Diện Tích Hình Vuông:' + dienTich
+        }else
+            alert('Xin nhập lại giá trị')
+    }
+</script>
+
+<h2>Bài 4</h2>
+Chiều Dài A: <input type="number" id="chieuDai"> meter<br>
+Chiều Cao B: <input type="number" id="chieuCao"> meter<br>
+<p id="result4">Diện Tích Hình Chữ Nhật: </p>
+<button type="button" onclick="calculate2()"> Tính Diện Tích Hình Chữ Nhật</button>
+<script>
+    function calculate2(){
+        let dai=document.getElementById('chieuDai').value;
+        let cao=document.getElementById('chieuCao').value;
+        if(dai>0 && cao>0){
+            let dienTich=dai*cao + ' m<sup">2</sup>'
+            document.getElementById('result4').innerHTML= 'Diện Tích Hình Chữ Nhật: ' + dienTich
+        }else
+            alert('Xin nhập lại giá trị')
+    }
+</script>
+
+<h2>Bài 5</h2>
+Chiều Dài Cạnh Kề A: <input type="number" id="canhA"> meter<br>
+Chiều Cao Cạnh Kề B: <input type="number" id="canhB"> meter<br>
+<p id="result5">Diện Tích Hình Tam Giác Vuông: </p>
+<button type="button" onclick="calculate3()"> Tính Diện Tích Hình Tam Giác Vuông</button>
+<script>
+    function calculate3(){
+        let canhA=document.getElementById("canhA").value;
+        let canhB=document.getElementById("canhB").value;
+        if( canhA>0 && canhB>0){
+            let dienTich=(canhA*canhB)/2 + ' m<sup>2</sup>'
+            document.getElementById('result5').innerHTML= 'Diện Tích Hình Tam Giác: ' + dienTich
+        }else
+            alert('Xin nhập lại giá trị')
+    }
+</script>
+
+<h2>Bài 6</h2>
+<p style="font-weight: bolder"> Phương Trình Bậc 1: " Ax + B = 0 " </p>
+Với A: <input type="number" id="soA">
+Với B: <input type="number" id="soB">
+<p id="result6" style="font-weight: bolder;color: red">Kết Quả x: </p>
+<button type="button" onclick="tinhNghiem()"> Tính Nghiệm Phương Trình </button>
+
+<script>
+    function tinhNghiem() {
+        let soA = document.getElementById('soA').value;
+        let soB = document.getElementById('soB').value;
+        let result = (-soB) / soA
+        if (soA === "0") {
+            if (soB === "0") {
+                alert('Phương Trình Vô Số Nghiệm')
+            } else {
+                alert('Phương Trình Vô Nghiệm')
+            }
+        } else {
+            document.getElementById('result6').innerHTML = 'Kết Quả x: ' + result
+        }
+    }
+</script>
+
+<h2>Bài 7</h2>
+<p style="font-weight: bolder"> Phương Trình Bậc 1: " Ax<sup>2</sup> + Bx + C = 0 " </p>
+Với A: <input type="number" id="numA">
+Với B: <input type="number" id="numB">
+Với C: <input type="number" id="numC">
+<p id="result7" style="font-weight: bolder;color: red">Kết Quả x: </p>
+<button type="button" onclick="tinhNghiem1()"> Tính Nghiệm Phương Trình </button>
+
+<script>
+    function tinhNghiem1() {
+        let numA = document.getElementById('numA').value;
+        let numB = document.getElementById('numB').value;
+        let numC = document.getElementById('numC').value;
+        let delta = (numB ** 2) - (4 * numA * numC);
+        let result = (-numC) / numB
+        let result1 = (-numB + (delta ** 1 / 2)) / (2 * numA);
+        let result2 = (-numB - (delta ** 1 / 2)) / (2 * numA);
+        let result3=(-numB)/(2*numA)
+        if (numA === "0") {
+            if (numB === "0") {
+                if (numC === "0") {
+                    alert('Phương Trình Vô Số Nghiệm')
+                } else {
+                    alert('Phương Trình Vô Nghiệm')
+                }
+            } else {
+                document.getElementById('result7').innerHTML = 'Kết Quả x: ' + result
+            }
+        } else {
+            if(delta<"0"){
+                alert('Phương Trình Vô Nghiệm')
+            }else if(delta === 0){
+                document.getElementById('result7').innerHTML = 'Kết Quả x<sub>1</sub> = x<sub>2</sub> = ' + result3
+            }else{
+                document.getElementById('result7').innerHTML = "Kết Quả x<sub>1</sub> = " + result1 + "\n Kết Quả x<sub>2</sub> = " + result2
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

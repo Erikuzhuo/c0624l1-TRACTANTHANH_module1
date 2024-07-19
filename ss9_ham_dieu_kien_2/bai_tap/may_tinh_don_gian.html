@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy Tính Đơn Giản</title>
+    <style>
+        table,tr,td,th{
+            border-collapse: collapse;
+        }
+        button{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<table>
+   <caption><h3> Máy Tính Đơn Giản </h3></caption>
+    <tr>
+        <td colspan="3"><input id='result'> </td>
+        <td><button type="button" onclick="nhap('c')">C</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="nhap('1')">1</button></td>
+        <td><button type="button" onclick="nhap('2')">2</button></td>
+        <td><button type="button" onclick="nhap('3')">3</button></td>
+        <td><button type="button" onclick="nhap('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="nhap('4')">4</button></td>
+        <td><button type="button" onclick="nhap('5')">5</button></td>
+        <td><button type="button" onclick="nhap('6')">6</button></td>
+        <td><button type="button" onclick="nhap('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="nhap('7')">7</button></td>
+        <td><button type="button" onclick="nhap('8')">8</button></td>
+        <td><button type="button" onclick="nhap('9')">9</button></td>
+        <td><button type="button" onclick="nhap('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="nhap('.')">.</button></td>
+        <td><button type="button" onclick="nhap('0')">0</button></td>
+        <td><button type="button" onclick="nhap('=')">=</button></td>
+        <td><button type="button" onclick="nhap('/')">/</button></td>
+    </tr>
+</table>
+<script>
+     function nhap(conSo) {
+         switch (conSo){
+             case '=':
+                 let string=document.getElementById('result').value;
+                 let result = eval(string);
+                 document.getElementById('result').value = result;
+                 break;
+             case 'c':
+                 document.getElementById('result').value = "";
+                 break;
+             default:
+                 document.getElementById('result').value += conSo;
+        }
+     }
+</script>
+
+
+</body>
+</html>

@@ -5,105 +5,105 @@
     <title>Luyện tập cấu trúc điều kiện 1</title>
 </head>
 <body>
-<!--<h2>Bài 1</h2>-->
-<!--Nhập Số A <input type="number" id="numa"><br>-->
-<!--Nhập Số B <input type="number" id="numb"><br>-->
-<!--<p id="result1"></p>-->
-<!--<button type="button" onclick="calculate()">Kiểm Tra</button>-->
-<!--<script>-->
-<!--    function calculate() {-->
-<!--        let numa = +document.getElementById('numa').value;-->
-<!--        let numb = +document.getElementById('numb').value;-->
-<!--        if (numa % numb === 0) {-->
-<!--            document.getElementById('result1').innerHTML = 'A Chia Hết Cho B'-->
-<!--        } else {-->
-<!--            document.getElementById('result1').innerHTML = 'A Ko Chia Hết Cho B'-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
+<h2>Bài 1</h2>
+Nhập Số A <input type="number" id="numa"><br>
+Nhập Số B <input type="number" id="numb"><br>
+<p id="result1"></p>
+<button type="button" onclick="calculate()">Kiểm Tra</button>
+<script>
+    function calculate() {
+        let numa = +document.getElementById('numa').value;
+        let numb = +document.getElementById('numb').value;
+        if (numa % numb === 0) {
+            document.getElementById('result1').innerHTML = 'A Chia Hết Cho B'
+        } else {
+            document.getElementById('result1').innerHTML = 'A Ko Chia Hết Cho B'
+        }
+    }
+</script>
 
-<!--<h2>Bài 2</h2>-->
-<!--Nhập số tuổi <input type="number" id="age">-->
-<!--<p id="result2"></p>-->
-<!--<button type="button" onclick="compare()">Kiểm Tra</button>-->
-<!--<script>-->
-<!--    function compare() {-->
-<!--        let age = +document.getElementById('age').value;-->
-<!--        if (age < 16) {-->
-<!--            document.getElementById('result2').innerHTML = 'Chưa Đủ Tuổi Vào Học'-->
-<!--        } else {-->
-<!--            document.getElementById('result2').innerHTML = 'Đủ Tuổi Vào Học'-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
+<h2>Bài 2</h2>
+Nhập số tuổi <input type="number" id="age">
+<p id="result2"></p>
+<button type="button" onclick="compare()">Kiểm Tra</button>
+<script>
+    function compare() {
+        let age = +document.getElementById('age').value;
+        if (age < 16) {
+            document.getElementById('result2').innerHTML = 'Chưa Đủ Tuổi Vào Học'
+        } else {
+            document.getElementById('result2').innerHTML = 'Đủ Tuổi Vào Học'
+        }
+    }
+</script>
 
-<!--<h2>Bài 3</h2>-->
-<!--Nhập Số Nguyên <input type="number" id="int">-->
-<!--<p id="result3"></p>-->
-<!--<button type="button" onclick="check()">Kiểm Tra</button>-->
-<!--<script>-->
-<!--    function check() {-->
-<!--        let int = +document.getElementById('int').value;-->
-<!--        if (int < 0) {-->
-<!--            document.getElementById('result3').innerHTML = 'Số Nguyên Bé Hơn 0'-->
-<!--        } else if (int > 0) {-->
-<!--            document.getElementById('result3').innerHTML = 'Số Nguyên Lớn Hơn 0'-->
-<!--        } else {-->
-<!--            document.getElementById('result3').innerHTML = 'Bằng 0'-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
+<h2>Bài 3</h2>
+Nhập Số Nguyên <input type="number" id="int">
+<p id="result3"></p>
+<button type="button" onclick="check()">Kiểm Tra</button>
+<script>
+    function check() {
+        let int = +document.getElementById('int').value;
+        if (int < 0) {
+            document.getElementById('result3').innerHTML = 'Số Nguyên Bé Hơn 0'
+        } else if (int > 0) {
+            document.getElementById('result3').innerHTML = 'Số Nguyên Lớn Hơn 0'
+        } else {
+            document.getElementById('result3').innerHTML = 'Bằng 0'
+        }
+    }
+</script>
 
-<!--<h2>Bài 4</h2>-->
-<!--Nhập Số A <input type="number" id="numbera">-->
-<!--Nhập Số B <input type="number" id="numberb">-->
-<!--Nhập Số C <input type="number" id="numberc">-->
-<!--<p id="kqua"></p>-->
-<!--<button type="button" onclick="check2()">Kiểm Tra</button>-->
-<!--<script>-->
-<!--    function check2() {-->
-<!--        let numa2 = +document.getElementById('numbera').value;-->
-<!--        let numb2 = +document.getElementById('numberb').value;-->
-<!--        let numc2 = +document.getElementById('numberc').value;-->
+<h2>Bài 4</h2>
+Nhập Số A <input type="number" id="numbera">
+Nhập Số B <input type="number" id="numberb">
+Nhập Số C <input type="number" id="numberc">
+<p id="kqua"></p>
+<button type="button" onclick="check2()">Kiểm Tra</button>
+<script>
+    function check2() {
+        let numa2 = +document.getElementById('numbera').value;
+        let numb2 = +document.getElementById('numberb').value;
+        let numc2 = +document.getElementById('numberc').value;
 
-<!--        if (numa2 >= numb2 && numa2 >= numc2) {-->
-<!--            document.getElementById("kqua").innerHTML = 'Số Lớn Nhất Là ' + numa2;-->
-<!--        } else if (numb2 >= numc2 && numb2 >= numa2) {-->
-<!--            document.getElementById("kqua").innerHTML = 'Số Lớn Nhất Là ' + numb2;-->
-<!--        } else if (numc2 >= numa2 && numc2 >= numb2) {-->
-<!--            document.getElementById("kqua").innerHTML = 'Số Lớn Nhất Là ' + numc2;-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
+        if (numa2 >= numb2 && numa2 >= numc2) {
+            document.getElementById("kqua").innerHTML = 'Số Lớn Nhất Là ' + numa2;
+        } else if (numb2 >= numc2 && numb2 >= numa2) {
+            document.getElementById("kqua").innerHTML = 'Số Lớn Nhất Là ' + numb2;
+        } else if (numc2 >= numa2 && numc2 >= numb2) {
+            document.getElementById("kqua").innerHTML = 'Số Lớn Nhất Là ' + numc2;
+        }
+    }
+</script>
 
-<!--<h2>Bài 5</h2>-->
-<!--Điểm Kiểm Tra <input type="number" id="kiemtra">-->
-<!--Điểm Giữa Kỳ <input type="number" id="giuaky">-->
-<!--Điểm Cuối Kỳ <input type="number" id="cuoiky">-->
-<!--<br>-->
-<!--<button type="button" onclick="xetDiem()"> Xét Điểm</button>-->
-<!--<br>-->
-<!--<p id="ketqua"></p>-->
+<h2>Bài 5</h2>
+Điểm Kiểm Tra <input type="number" id="kiemtra">
+Điểm Giữa Kỳ <input type="number" id="giuaky">
+Điểm Cuối Kỳ <input type="number" id="cuoiky">
+<br>
+<button type="button" onclick="xetDiem()"> Xét Điểm</button>
+<br>
+<p id="ketqua"></p>
 
-<!--<script>-->
-<!--    function xetDiem() {-->
-<!--        let kiemtra = +document.getElementById('kiemtra').value;-->
-<!--        let giuaky = +document.getElementById('giuaky').value;-->
-<!--        let cuoiky = +document.getElementById('cuoiky').value;-->
-<!--        let trungbinh = (kiemtra + giuaky + (cuoiky * 2)) / 4-->
-<!--        if (trungbinh >= 85) {-->
-<!--            document.getElementById('ketqua').innerText = 'Loại Giỏi';-->
-<!--        } else if (trungbinh > 75) {-->
-<!--            document.getElementById('ketqua').innerText = 'Loại Khá';-->
-<!--        } else if (trungbinh > 60) {-->
-<!--            document.getElementById('ketqua').innerText = 'Loại TB Khá';-->
-<!--        } else if (trungbinh > 50) {-->
-<!--            document.getElementById('ketqua').innerText = 'Loại TB';-->
-<!--        } else {-->
-<!--            document.getElementById('ketqua').innerText = 'Rớt';-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
+<script>
+    function xetDiem() {
+        let kiemTra = +document.getElementById('kiemtra').value;
+        let giuaKy = +document.getElementById('giuaky').value;
+        let cuoiKy = +document.getElementById('cuoiky').value;
+        let trungBinh = (kiemTra + giuaKy + (cuoiKy * 2)) / 4
+        if (trungBinh >= 85) {
+            document.getElementById('ketqua').innerText = 'Loại Giỏi';
+        } else if (trungBinh > 75) {
+            document.getElementById('ketqua').innerText = 'Loại Khá';
+        } else if (trungBinh > 60) {
+            document.getElementById('ketqua').innerText = 'Loại TB Khá';
+        } else if (trungBinh > 50) {
+            document.getElementById('ketqua').innerText = 'Loại TB';
+        } else {
+            document.getElementById('ketqua').innerText = 'Rớt';
+        }
+    }
+</script>
 
 <h2> Bài 6 </h2>
 Doanh Thu <input type="number" id="doanhthu"> VND
@@ -114,15 +114,15 @@ Doanh Thu <input type="number" id="doanhthu"> VND
 
 <script>
     function hoaHong() {
-        let doanhthu = +document.getElementById("doanhthu").value;
+        let doanhThu = +document.getElementById("doanhthu").value;
         let kieu=new Intl.NumberFormat('vn');
-        let hoahong5 = kieu.format((doanhthu - 2000000) * 0.1) + ' VND';
-        let hoahong10 = kieu.format((doanhthu - 2000000) * 0.25) + ' VND';
+        let hoaHong5 = kieu.format((doanhThu - 2000000) * 0.1) + ' VND';
+        let hoaHong10 = kieu.format((doanhThu - 2000000) * 0.25) + ' VND';
 
-        if (doanhthu >= 10000000) {
-            document.getElementById('ketqua1').innerHTML = `Hoa Hồng: ${hoahong10}`;
-        } else if (doanhthu >= 2000000) {
-            document.getElementById('ketqua1').innerHTML = `Hoa Hồng: ${hoahong5}`;
+        if (doanhThu >= 10000000) {
+            document.getElementById('ketqua1').innerHTML = `Hoa Hồng: ${hoaHong10}`;
+        } else if (doanhThu >= 2000000) {
+            document.getElementById('ketqua1').innerHTML = `Hoa Hồng: ${hoaHong5}`;
         }else
             document.getElementById('ketqua1').innerHTML = 'Không Có Hoa Hồng';
     }
@@ -140,15 +140,15 @@ Note:
 <p id="cuoc"></p>
 <script>
     function tinhCuoc() {
-        let cuoctn = document.getElementById('phuttn').value;
+        let cuocTN = document.getElementById('phuttn').value;
         let kieu=new Intl.NumberFormat('vn');
         let d10, t30, t60;
-        d10 = kieu.format(cuoctn * 3000) + ' VND';
-        t30 = kieu.format(cuoctn * 5000) + ' VND';
-        t60 = kieu.format(cuoctn * 8000) + ' VND';
-        if (cuoctn >= 60) {
+        d10 = kieu.format(cuocTN * 3000) + ' VND';
+        t30 = kieu.format(cuocTN * 5000) + ' VND';
+        t60 = kieu.format(cuocTN * 8000) + ' VND';
+        if (cuocTN >= 60) {
             document.getElementById('cuoc').innerText = 'Cước Phí Là: ' +  t60;
-        } else if (cuoctn >= 30) {
+        } else if (cuocTN >= 30) {
             document.getElementById('cuoc').innerText = 'Cước Phí Là: ' +  t30;
         } else {
             document.getElementById('cuoc').innerText = 'Cước Phí Là: ' +  d10;

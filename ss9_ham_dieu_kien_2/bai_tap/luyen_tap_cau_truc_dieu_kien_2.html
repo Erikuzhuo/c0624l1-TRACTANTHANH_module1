@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Luyện tập cấu trúc điều kiện 2</title>
     <style>
-        sub,sup{
+        sub, sup {
             font-size: x-small
         }
     </style>
@@ -19,19 +19,21 @@ Nhiệt Độ: <input type="number" id="nhietDo"/>
 </select>
 <p id="result" style="font-weight: bolder;color: blue">Kết Quả</p>
 <script>
-    document.getElementById('loaiNhiet').addEventListener('change',convert)
-    document.getElementById('nhietDo').addEventListener('change',convert)
+    document.getElementById('loaiNhiet').addEventListener('change', convert)
+    document.getElementById('nhietDo').addEventListener('change', convert)
+
     function convert() {
-        let loaiNhiet=document.getElementById("loaiNhiet").value;
+        let loaiNhiet = document.getElementById("loaiNhiet").value;
         let chiSo = document.getElementById("nhietDo").value;
-        let doC= (chiSo*(9/5)+32);
-        let doF= (chiSo-32/(9/5));
-            if (loaiNhiet === "°C") {
-                document.getElementById('result').innerHTML = 'Kết Quả ' + doF.toFixed(2) + ' Độ F';
-            } else if (loaiNhiet === "°F") {
-                document.getElementById('result').innerHTML = 'Kết Quả ' + doC.toFixed(2) + ' Độ C';
-            }else{}
+        let doC = (chiSo * (9 / 5) + 32);
+        let doF = (chiSo - 32 / (9 / 5));
+        if (loaiNhiet === "°C") {
+            document.getElementById('result').innerHTML = 'Kết Quả ' + doF.toFixed(2) + ' Độ F';
+        } else if (loaiNhiet === "°F") {
+            document.getElementById('result').innerHTML = 'Kết Quả ' + doC.toFixed(2) + ' Độ C';
+        } else {
         }
+    }
 </script>
 
 <h2>Bài 2</h2>
@@ -43,10 +45,11 @@ Nhiệt Độ: <input type="number" id="nhietDo"/>
 </select>
 <p id="result2" style="font-weight: bolder;color: red">Kết Quả</p>
 <script>
-    document.getElementById('donVi').addEventListener('change',convert2)
-    document.getElementById('doDai').addEventListener('change',convert2)
+    document.getElementById('donVi').addEventListener('change', convert2)
+    document.getElementById('doDai').addEventListener('change', convert2)
+
     function convert2() {
-        let donVi =  document.getElementById("donVi").value;
+        let donVi = document.getElementById("donVi").value;
         let doDai = document.getElementById("doDai").value;
         let meter = doDai / 3.2808;
         let feet = doDai * 3.2808;
@@ -55,7 +58,8 @@ Nhiệt Độ: <input type="number" id="nhietDo"/>
                 document.getElementById('result2').innerHTML = 'Kết Quả ' + feet.toFixed(2) + ' Feet';
             } else if (donVi === "ft") {
                 document.getElementById('result2').innerHTML = 'Kết Quả ' + meter.toFixed(2) + ' Meter';
-            }else{}
+            } else {
+            }
         } else {
             alert('Độ dài không có số Âm, Xin mời nhập lại!')
         }
@@ -67,12 +71,12 @@ Chiều Dài Cạnh A: <input type="number" id="chieuDaiCanh"> meter<br>
 <p id="result3">Diện Tích Hình Vuông: </p>
 <button type="button" onclick="calculate()"> Tính Diện Tích Hình Vuông</button>
 <script>
-    function calculate(){
-        let canh=document.getElementById('chieuDaiCanh').value;
-        if(canh>0){
-            let dienTich=canh**2 + ' m<sup>2</sup>'
-            document.getElementById('result3').innerHTML= 'Diện Tích Hình Vuông:' + dienTich
-        }else
+    function calculate() {
+        let canh = document.getElementById('chieuDaiCanh').value;
+        if (canh > 0) {
+            let dienTich = canh ** 2 + ' m<sup>2</sup>'
+            document.getElementById('result3').innerHTML = 'Diện Tích Hình Vuông:' + dienTich
+        } else
             alert('Xin nhập lại giá trị')
     }
 </script>
@@ -83,13 +87,13 @@ Chiều Cao B: <input type="number" id="chieuCao"> meter<br>
 <p id="result4">Diện Tích Hình Chữ Nhật: </p>
 <button type="button" onclick="calculate2()"> Tính Diện Tích Hình Chữ Nhật</button>
 <script>
-    function calculate2(){
-        let dai=document.getElementById('chieuDai').value;
-        let cao=document.getElementById('chieuCao').value;
-        if(dai>0 && cao>0){
-            let dienTich=dai*cao + ' m<sup">2</sup>'
-            document.getElementById('result4').innerHTML= 'Diện Tích Hình Chữ Nhật: ' + dienTich
-        }else
+    function calculate2() {
+        let dai = document.getElementById('chieuDai').value;
+        let cao = document.getElementById('chieuCao').value;
+        if (dai > 0 && cao > 0) {
+            let dienTich = dai * cao + ' m<sup">2</sup>'
+            document.getElementById('result4').innerHTML = 'Diện Tích Hình Chữ Nhật: ' + dienTich
+        } else
             alert('Xin nhập lại giá trị')
     }
 </script>
@@ -100,13 +104,13 @@ Chiều Cao Cạnh Kề B: <input type="number" id="canhB"> meter<br>
 <p id="result5">Diện Tích Hình Tam Giác Vuông: </p>
 <button type="button" onclick="calculate3()"> Tính Diện Tích Hình Tam Giác Vuông</button>
 <script>
-    function calculate3(){
-        let canhA=document.getElementById("canhA").value;
-        let canhB=document.getElementById("canhB").value;
-        if( canhA>0 && canhB>0){
-            let dienTich=(canhA*canhB)/2 + ' m<sup>2</sup>'
-            document.getElementById('result5').innerHTML= 'Diện Tích Hình Tam Giác: ' + dienTich
-        }else
+    function calculate3() {
+        let canhA = document.getElementById("canhA").value;
+        let canhB = document.getElementById("canhB").value;
+        if (canhA > 0 && canhB > 0) {
+            let dienTich = (canhA * canhB) / 2 + ' m<sup>2</sup>'
+            document.getElementById('result5').innerHTML = 'Diện Tích Hình Tam Giác: ' + dienTich
+        } else
             alert('Xin nhập lại giá trị')
     }
 </script>
@@ -116,7 +120,7 @@ Chiều Cao Cạnh Kề B: <input type="number" id="canhB"> meter<br>
 Với A: <input type="number" id="soA">
 Với B: <input type="number" id="soB">
 <p id="result6" style="font-weight: bolder;color: red">Kết Quả x: </p>
-<button type="button" onclick="tinhNghiem()"> Tính Nghiệm Phương Trình </button>
+<button type="button" onclick="tinhNghiem()"> Tính Nghiệm Phương Trình</button>
 
 <script>
     function tinhNghiem() {
@@ -141,7 +145,7 @@ Với A: <input type="number" id="numA">
 Với B: <input type="number" id="numB">
 Với C: <input type="number" id="numC">
 <p id="result7" style="font-weight: bolder;color: red">Kết Quả x: </p>
-<button type="button" onclick="tinhNghiem1()"> Tính Nghiệm Phương Trình </button>
+<button type="button" onclick="tinhNghiem1()"> Tính Nghiệm Phương Trình</button>
 
 <script>
     function tinhNghiem1() {
@@ -152,7 +156,7 @@ Với C: <input type="number" id="numC">
         let result = (-numC) / numB
         let result1 = (-numB + (delta ** 1 / 2)) / (2 * numA);
         let result2 = (-numB - (delta ** 1 / 2)) / (2 * numA);
-        let result3=(-numB)/(2*numA)
+        let result3 = (-numB) / (2 * numA)
         if (numA === "0") {
             if (numB === "0") {
                 if (numC === "0") {
@@ -164,15 +168,218 @@ Với C: <input type="number" id="numC">
                 document.getElementById('result7').innerHTML = 'Kết Quả x: ' + result
             }
         } else {
-            if(delta<"0"){
+            if (delta < "0") {
                 alert('Phương Trình Vô Nghiệm')
-            }else if(delta === 0){
+            } else if (delta === 0) {
                 document.getElementById('result7').innerHTML = 'Kết Quả x<sub>1</sub> = x<sub>2</sub> = ' + result3
-            }else{
-                document.getElementById('result7').innerHTML = "Kết Quả x<sub>1</sub> = " + result1 + "\n Kết Quả x<sub>2</sub> = " + result2
+            } else {
+                document.getElementById('result7').innerHTML = "Kết Quả x<sub>1</sub> = " + result1 + " x<sub>2</sub> = " + result2
             }
         }
 
+    }
+</script>
+
+<h2>Bài 8</h2>
+
+Nhập Vào 1 Số: <input type="number" id="tuoi">
+<p id="result8">Kết Quả: </p>
+<button type="button" onclick="kiemTra()"> Kiểm Tra</button>
+<script>
+    function kiemTra() {
+        let tuoi = parseFloat(document.getElementById('tuoi').value);
+        if (Number.isInteger(tuoi)) {
+            if (tuoi > 0 && tuoi < 120) {
+                document.getElementById('result8').innerHTML = ' Đây là tuổi của một người'
+            } else {
+                document.getElementById('result8').innerHTML = ' Đây không là tuổi của một người'
+            }
+        } else {
+            document.getElementById('result8').innerHTML = ' Mời nhập lại số tuổi'
+        }
+    }
+</script>
+
+<h2>Bài 9</h2>
+Xét 3 giá trị có phải là cạnh của 1 tam giác:<br>
+Với A: <input type="number" id="canhTGA">
+Với B: <input type="number" id="canhTGB">
+Với C: <input type="number" id="canhTGC">
+<p id="result9" style="font-weight: bolder;color: red">Kết Quả: </p>
+<button type="button" onclick="xetTamGiac()"> Xét 3 giá trị</button>
+
+<script>
+    function xetTamGiac() {
+        let canhTGA = parseFloat(document.getElementById('canhTGA').value);
+        let canhTGB = parseFloat(document.getElementById('canhTGB').value);
+        let canhTGC = parseFloat(document.getElementById('canhTGC').value);
+        let khongPhaiTamGiac = canhTGA <= 0 || canhTGB <= 0 || canhTGC <= 0 || canhTGA + canhTGB <= canhTGC || canhTGA + canhTGC <= canhTGB || canhTGB + canhTGC <= canhTGA;
+        let tamGiacVuong = canhTGA ** 2 === canhTGB ** 2 + canhTGC ** 2 || canhTGB ** 2 === canhTGA ** 2 + canhTGC ** 2 || canhTGB ** 2 + canhTGA ** 2 === canhTGC ** 2;
+        let tamGiacDeu = canhTGA === canhTGB && canhTGB === canhTGC;
+
+        if (khongPhaiTamGiac) {
+            document.getElementById('result9').innerHTML = 'Đây không phải là cạnh của tam giác';
+        } else if (tamGiacVuong) {
+            document.getElementById('result9').innerHTML = 'Đây là cạnh của tam giác vuông';
+        } else if (tamGiacDeu) {
+            document.getElementById('result9').innerHTML = 'Đây là cạnh của tam giác đều';
+        } else {
+            document.getElementById('result9').innerHTML = 'Đây là cạnh của tam giác';
+        }
+    }
+</script>
+
+<h2>Bài 10</h2>
+Chỉ số điện: <input type="number" id="chiSoDien">kV<br>
+<p>
+    Dưới 6kV giá = <span style="color: blue"> 1.809 VND</span>;<br>
+    Từ 6kV - dưới 22kV giá = <span style="color: blue">1.729 VND</span>;<br>
+    Từ 22kV - dưới 110kV giá = <span style="color: blue">1.669 VND</span>;<br>
+    Trên 110kV giá = <span style="color: blue">1.649 VND</span>.
+</p>
+<p id="result10" style="font-weight: bolder;color: red">Giá Điện</p>
+<button type="button" onclick="tinhTienDien()">Tính Tiền Điện</button>
+<script>
+    function tinhTienDien() {
+        let chiSoDien = parseFloat(document.getElementById("chiSoDien").value);
+        let under6kV = chiSoDien * 1809;
+        let under22kV = (chiSoDien - 6)* 1729 + under6kV;
+        let under110kV = (chiSoDien - 22)* 1669 + under6kV + under22kV;
+        let above110kV = (chiSoDien - 110)* 1649 + under6kV + under22kV + under110kV;
+        let kieu= Intl.NumberFormat('vn')
+
+        if(chiSoDien<0){
+            alert('Xin Nhập Lại Chỉ Số')
+            }else if (chiSoDien < 6) {
+                document.getElementById('result10').innerHTML = 'Giá Điện = ' + kieu.format(under6kV)+' VND'
+            } else if (chiSoDien < 22) {
+                document.getElementById('result10').innerHTML = 'Giá Điện = ' + kieu.format(under22kV)+' VND'
+            } else if (chiSoDien < 110) {
+                document.getElementById('result10').innerHTML = 'Giá Điện = ' + kieu.format(under110kV)+' VND'
+            } else {
+                document.getElementById('result10').innerHTML = 'Giá Điện = ' + kieu.format(above110kV)+' VND'
+        }
+    }
+</script>
+
+<h2>Bài 11</h2>
+Thu Nhập Cá Nhân: <input type="number" id="thuNhap" onchange="tien()"> VND
+<br>
+<br>
+<style>
+    table,tr,th,td{
+        width: 500px;
+        border-collapse: collapse;
+        border: 1px solid ;
+        vertical-align: center;
+        text-align: center;
+    }
+</style>
+<table>
+    <tr>
+        <th>Bậc</th>
+        <th>Thu nhập tính thuế</th>
+        <th>Số thuế phải nộp</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>TN <= 5tr</td>
+        <td>TN * 5%</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>5tr< TN <= 10tr</td>
+        <td>TN * 10% - 0.25tr</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>10tr< TN</td>
+        <td>TN * 15% - 0.75tr</td>
+    </tr>
+</table>
+<br>
+<p id="result11" style="font-weight: bolder;color: red">Thuế cần đóng: </p>
+<button type="button" onclick="tinhThue()">Tính Thuế</button>
+<script>
+    function tien(){
+        let kieu=Intl.NumberFormat('vn');
+        document.getElementById('thuNhap').innerHTML=kieu.format(document.getElementById('thuNhap'))
+    }
+    function tinhThue(){
+        let thuNhap=parseFloat(document.getElementById('thuNhap').value);
+        let kieu=Intl.NumberFormat('vn');
+        let duoi5Tr=(thuNhap-11000000)*0.05
+        let duoi10Tr=(thuNhap-11000000)*0.1-250000
+        let tren10Tr=(thuNhap-11000000)*0.15-750000
+
+        if(thuNhap<=11000000){
+            document.getElementById('result11').innerHTML='Thuế cần đóng = 0 VND'
+        }else if(thuNhap<=16000000){
+            document.getElementById('result11').innerHTML='Thuế cần đóng = '+kieu.format(duoi5Tr)+' VND'
+        }else if(thuNhap<=21000000){
+            document.getElementById('result11').innerHTML='Thuế cần đóng = '+kieu.format(duoi10Tr)+' VND'
+        }else {
+            document.getElementById('result11').innerHTML='Thuế cần đóng = '+kieu.format(tren10Tr)+' VND'
+        }
+    }
+</script>
+
+<h2>Bài 12</h2>
+Tổng tiền mượn: <input type="number" id="tien"> VND<br>
+Kỳ hạn:<input type="number" id="thang"> Tháng
+<br>
+<br>
+<style>
+    table,tr,th,td{
+        width: 500px;
+        border-collapse: collapse;
+        border: 1px solid ;
+        vertical-align: center;
+        text-align: center;
+    }
+</style>
+<table>
+    <tr>
+        <th>Tháng</th>
+        <th>1 Tháng</th>
+        <th>6 Tháng</th>
+        <th>12 Tháng</th>
+        <th>24 Tháng</th>
+    </tr>
+    <tr>
+        <th>Lãi Suất</th>
+        <td>3.2%</td>
+        <td>5.3%</td>
+        <td>6.2%</td>
+        <td>5.7%</td>
+
+    </tr>
+</table>
+<br>
+<p id="result12" style="font-weight: bolder;color: red">Lãi cần đóng: </p>
+<button type="button" onclick="tinhLai()">Tính Lãi</button>
+<script>
+    function tinhLai() {
+        let tienMuon = parseFloat(document.getElementById('tien').value);
+        let thangMuon = parseFloat(document.getElementById('thang').value);
+        let kieu = Intl.NumberFormat('vn');
+        let muon1Thang = tienMuon * 0.032
+        let muon6Thang = tienMuon * 0.053
+        let muon12Thang = tienMuon * 0.062
+        let muon24Thang = tienMuon * 0.057
+        if (thangMuon <= 0 || tienMuon <= 0) {
+            alert('Mời nhập chính xác số tháng và tiền')
+        } else if (thangMuon === 1) {
+            document.getElementById('result12').innerHTML = 'Lãi cần đóng: ' + kieu.format(muon1Thang)
+        } else if (thangMuon === 6) {
+            document.getElementById('result12').innerHTML = 'Lãi cần đóng: ' + kieu.format(muon6Thang)
+        } else if (thangMuon === 12) {
+            document.getElementById('result12').innerHTML = 'Lãi cần đóng: ' + kieu.format(muon12Thang)
+        } else if (thangMuon === 24) {
+            document.getElementById('result12').innerHTML = 'Lãi cần đóng: ' + kieu.format(muon24Thang)
+        } else {
+            alert('Mời nhập chính xác số tháng và tiền')
+        }
     }
 </script>
 </body>

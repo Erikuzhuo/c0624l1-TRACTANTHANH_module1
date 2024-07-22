@@ -7,21 +7,25 @@
 <body>
 <script>
     let table;
-    table="<table border='1' width='300' cellspacing='0' cellpadding='3'>";
-    for(i=1;i<=10;i++){
+    table = "<table border='1' width='300' cellspacing='0' cellpadding='3'>";
+    for (i = 1; i <= 10; i++) {
         table += '<tr>';
-        for(j=1;j<=10;j++){
-            table += '<td>' + i*j + '</td>';
-        }table += '</tr>';
-    }table += "</table>"
+        for (j = 1; j <= 10; j++) {
+            table += '<td>' + i * j + '</td>';
+        }
+        table += '</tr>';
+    }
+    table += "</table>"
     document.write(table)
+
+
 </script>
 <br>
 <script>
-    let table1,i,j;
-        table1="<table border='1' width='300' cellspacing='0' cellpadding='3'>";
-        i=j=1;
-    while(i<=10) {
+    let table1, i, j;
+    table1 = "<table border='1' width='300' cellspacing='0' cellpadding='3'>";
+    i = j = 1;
+    while (i <= 10) {
         table1 += "<tr>";
         while (j <= 10) {
             table1 += '<td>' + i * j + '</td>';
@@ -30,7 +34,8 @@
         table1 += '</tr>';
         j = 1;
         i++;
-    }table1 +='</table>'
+    }
+    table1 += '</table>'
 
     document.write(table1)
 </script>

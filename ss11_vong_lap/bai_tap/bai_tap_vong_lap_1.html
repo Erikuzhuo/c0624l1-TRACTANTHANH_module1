@@ -95,5 +95,55 @@ for (i=0;i<num2;i++){
 
 </script>
 
+
+<h3>Bài 7</h3>
+<script>
+    let i;
+    for(i=1;i<=100;i++){
+        if(i%5===0&&i%3===0) {
+            document.write(i + ' FizzBuzz' + '<br>');
+        }else if(i%3===0){
+            document.write(i + ' Fizz'+'<br>');
+        }else if(i%5===0){
+            document.write(i + ' Buzz'+'<br>');
+        }else{
+            document.write(i +'<br>');
+        }
+    }
+</script>
+
+<h3>Bài 8</h3>
+<button id='button' type="button" onclick="random()" onmouseover="mouseOver()" onmouseout="mouseOut()"> Chơi</button>
+<script>
+    document.getElementById('button').style.backgroundColor = 'gold';
+    document.getElementById('button').style.cursor = 'pointer';
+
+    function mouseOver() {
+        document.getElementById("button").style.backgroundColor = 'red';
+    }
+
+    function mouseOut() {
+        document.getElementById("button").style.backgroundColor = 'gold';
+    }
+
+    let min, max;
+
+    function random() {
+        min = Math.ceil(prompt('Nhập số bắt đầu: '));
+        max = Math.floor(prompt('Nhập số bắt đầu: '));
+        let result = Math.floor(Math.random() * (max - min + 1) + min)
+        let compare = parseInt(prompt('Nhập số dự đoán: '));
+        while (result !== compare) {
+            if (result < compare) {
+                alert('Số bạn nhập lớn hơn: ' + compare + '>' + result);
+                compare = parseInt(prompt('Nhập số dự đoán: '));
+            } else if (result > compare) {
+                alert('Số bạn nhập bé hơn: ' + compare + '<' + result);
+                compare = parseInt(prompt('Nhập số dự đoán: '));
+            }
+        }
+        alert('Xin Chúc Mừng:' + result + '=' + compare);
+    }
+</script>
 </body>
 </html>

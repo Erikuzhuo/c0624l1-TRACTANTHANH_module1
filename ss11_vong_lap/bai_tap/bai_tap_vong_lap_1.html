@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Vòng Lặp 01</title>
+</head>
+<body>
+<h3>Bài 1</h3>
+<script>
+    let i=0;
+    for(i;i<100;i++){
+        if(i===98){
+            document.write('Đã Hoàn Thành'+' ');
+        }document.write(i+' ');
+    }
+</script>
+
+<h3>Bài 2</h3>
+<script>
+    debugger
+    let num1 = +prompt('Nhập Nhiệt Độ')
+    while (num1<=20 || num1>=100)
+    if (num1 <= 20) {
+        document.write(num1 + ' Tăng Nhiệt Độ');
+        num = +prompt('Nhập Nhiệt Độ');
+    } else if (num1 >= 100) {
+        document.write(num1 + ' Giảm Nhiệt Độ');
+        num1 = +prompt('Nhập Nhiệt Độ');
+    }document.write('Nhiệt Độ Hiện Tại= '+num1);
+</script>
+
+<h3>Bìa 3</h3>
+<script>
+    let number=prompt('Nhập một số: ');
+    let so1=1
+    let so2=1
+    let temp1;
+
+    document.write('Fibonacci Series: ' + '<br>')
+
+    for (let i=0;i<number;i++){
+        document.write(so1 + '<br>')
+        temp1 = so1 + so2
+        so1 = so2
+        so2 = temp1
+    }
+</script>
+
+<h3> Bài 4 </h3>
+<script>
+let num2=prompt('nhập số lượng số Fibonacci: ');
+let n1=0
+let n2=1
+let temp;
+for (i=0;i<num2;i++){
+    temp=n1+n2;
+    if(temp%5===0){
+        document.write('Số Fibonacci chia hết cho 5 đầu tiên: ' + temp);
+        break;
+    }
+    n1=n2
+    n2=temp;
+
+}
+</script>
+
+<h3>Bài 5</h3>
+<script>
+    let num1 = 1;
+    let num2 = 1;
+    let temp2;
+    let sum=num1+num2;
+    for (let i = 3; i <=20; i++) {
+        temp2 = num1 + num2;
+        num1 = num2;
+        num2 = temp2;
+        sum+=temp2
+
+    }document.write('tổng 20 số đầu của Fibonacci:'+ sum +'<br>')
+</script>
+
+
+
+</body>
+</html>

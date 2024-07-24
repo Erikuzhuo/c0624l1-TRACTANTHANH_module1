@@ -5,28 +5,55 @@
     <title>Title</title>
 </head>
 <body>
+<!--<script>-->
+<!--    let numbers = prompt('Nhập số lượng số nguyên cần hiển thị: ');-->
+<!--    let count = 0-->
+<!--    let N = 2;-->
+<!--    debugger-->
+<!--    if (numbers < 2) {-->
+<!--        document.write('Không có số Nguyên Tố')-->
+<!--    } else {-->
+<!--        while (count < numbers) {-->
+<!--            let soNguyenTo = true;-->
+<!--            for (let i = 2; i <= Math.sqrt(N); i++) {-->
+<!--                if (N % i === 0) {-->
+<!--                    soNguyenTo = false;-->
+<!--                    break;-->
+<!--                }-->
+<!--            }-->
+<!--            if (soNguyenTo === true) {-->
+<!--                document.write(N + ' là số Nguyên Tố' + '<br>');-->
+<!--            }-->
+<!--            count++;-->
+<!--            N++;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+
 <script>
-    let numbers = prompt('Nhập số lượng số nguyên cần hiển thị: ');
-    let count = 0
-    let N = 2;
+    let num = prompt('input your number: ');
+    let N = 2
+    let i = 0
+
     debugger
-    if (numbers < 2) {
-        document.write('Không có số Nguyên Tố')
-    } else {
-        while (count < numbers) {
-            let soNguyenTo = true;
-            for (let i = 2; i <= Math.sqrt(N); i++) {
-                if (N % i === 0) {
-                    soNguyenTo = false;
+    while (i < num) {
+        if (num < 2) {
+            document.write('There are no Prime number'+'<br>')
+        } else {
+            let primeNumber = true;
+            for (let j = 2; j <= Math.sqrt(N); j++) {
+                if (N % j === 0) {
+                    primeNumber = false;
                     break;
                 }
             }
-            if (soNguyenTo === true) {
-                document.write(N + ' là số Nguyên Tố' + '<br>');
-            }
-            count++;
-            N++;
+        if (primeNumber === true) {
+            document.write(N + ' is a Prime Number'+'<br>')
         }
+        }
+        i++;
+        N++
     }
 </script>
 </body>

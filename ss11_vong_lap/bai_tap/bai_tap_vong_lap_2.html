@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Bài tập vòng lặp 2</title>
+</head>
+<body>
+<h2>Bai 1</h2>
+<script>
+    let num1, num2, i, temp;
+    num1 = num2 = 1;
+    let soLuong = parseInt(prompt('Nhap so luong so Fibanacci: '));
+    for (i = 0; i < soLuong; i++) {
+        document.write(num1 + "<br>")
+        temp = num1 + num2;
+        num1 = num2;
+        num2 = temp
+
+    }
+</script>
+
+<h2>Bai 2</h2>
+<script>
+    let num = parseInt(prompt('Nhap so luong so Fibanacci: '));
+    let n = 0
+    let N = 1;
+    for (let i = 0; i <= num; i++) {
+        if (n === 0 || n === 1) {
+            document.write(n + "! = " + 1 + "<br>");
+        } else {
+
+            for (let j = 1; j <= n; j++) {
+                N *= j
+            }
+            document.write(n + "! = " + N + "<br>");
+            N = 1;
+        }
+        n++;
+    }
+</script>
+
+<h2>Bai 3</h2>
+<script>
+    let i, j;
+    let table = "<table>";
+    for (i = 1; i <= 5; i++) {
+        table += "<tr>";
+        for (j = 1; j <= i; j++) {
+            table += "<td>*</td>";
+        }
+        table += "</tr>";
+    }
+    table += "</table>";
+    document.write(table)
+    document.write('---------------------------------')
+    let table2 = "<table>";
+    for (i = 1; i <= 5; i++) {
+        table2 += "<tr>"
+        for (j = 1; j <= 6 - i; j++) {
+            table2 += "<td>*</td>";
+        }
+        table2 += "</tr>"
+    }
+    table2 += "</table>";
+    document.write(table2)
+    document.write('---------------------------------')
+    let table3 = "<table>"
+    for (i = 1; i <= 5; i++) {
+        table3 += "<tr>";
+        for (j = 1; j < 6 - i; j++) {
+            table3 += "<td>&ensp;</td>"
+        }
+    for (j = 1; j <= i; j++) {
+        table3 += "<td>*</td>"
+    }
+    table3 += "</tr>";
+    }
+    table3 += "</table>";
+    document.write(table3)
+    document.write('---------------------------------')
+    let table4 = "<table>"
+    for (i = 1; i <=5; i++) {
+        table4 += "<tr>";
+        for (j = 1; j <i; j++) {
+            table4 += "<td>&ensp;</td>"
+        }
+        for (j = 1; j <=6-i; j++) {
+            table4 += "<td>*</td>"
+        }
+
+        table4 += "</tr>";
+    }
+    table4 += "</table>";
+    document.write(table4)
+</script>
+
+<script>
+    // in hình chữ nhật đặc
+    // có hàng (i) và cột(j)
+
+    // loop i in hàng
+    for (let i = 1; i <= 5; i++) {
+        // j cột
+        for (let j = 1; j <= i; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("---------------------<br>")
+    for (let i = 1; i <= 5; i++) {
+        // j cột
+        for (let j = 1; j <= 6 - i; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("---------------------<br>")
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 6 - i; j++) {
+            document.write("&ensp;");
+        }
+        for (let j = 1; j <= i; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+
+    document.write("----------cách 2-----------<br>")
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5; j++) {
+            if (j <= 5 - i) {
+                document.write("&ensp;");
+            } else {
+                document.write("*");
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+
+<h2>Bai 4</h2>
+<script>
+    let i, j, table;
+    table = "<table>"
+    for (i = 1; i <= 7; i++) {
+        table += "<tr>"
+        if (i === 1 || i === 7) {
+            for (j = 1; j < 22; j++) {
+                table += "<td>*</td>"
+            }table+="</tr>";}
+        else
+            {
+                for (j = 1; j < 22; j++) {
+                    if (j === 1 || j === 21) {
+                        table += "<td>*</td>"
+                    } else table += "<td>&ensp;</td>"
+                }table+="</tr>";
+            }
+    }
+    table += "</table>";
+    document.write(table)
+</script>
+
+<h2>Bai 5</h2>
+<script>
+    soTien=parseFloat(prompt('Tong Tien Muon: '));
+    soThang=prompt('Nhap so thang muon: ')
+    let tienLai;
+    for (let i=1;i<=soThang;i++){
+        tien=Intl.NumberFormat("vn");
+        tienLai=parseInt(soTien*0.322*100)/100;
+        document.write("Tien lai thang "+i+": "+tien.format(tienLai)+" VND <br>");
+        soTien+=tienLai;
+    }
+</script>
+
+<h3>Bai 6</h3>
+<script>
+    for (let j = 0; j < 7; j++) {
+        if (j === 1 || j === 2 || j === 4|| j === 5) {
+            document.write("*");
+        } else document.write("&ensp;")
+    }document.write("<br>")
+    for (let j = 0; j < 7; j++) {
+        if (j === 0 || j === 3 || j === 6) {
+            document.write("*");
+        } else document.write("&ensp;")
+    }document.write("<br>")
+    for (let j = 0; j < 7; j++) {
+        if (j === 0 || j === 6) {
+            document.write("*");
+        } else document.write("&ensp;")
+    }document.write("<br>")
+    for (let j = 0; j < 7; j++) {
+        if (j === 1 || j === 5) {
+            document.write("*");
+        } else document.write("&ensp;")
+    }document.write("<br>")
+    for (let j = 0; j < 7; j++) {
+        if (j === 2 || j === 4) {
+            document.write("*");
+        } else document.write("&ensp;")
+    }document.write("<br>")
+    for (let j = 0; j < 7; j++) {
+        if (j === 3) {
+            document.write("*");
+        } else document.write("&ensp;")
+    }document.write("<br>")
+</script>
+
+<script>
+    const rows = [
+        [1, 2, 4, 5],
+        [0, 3, 6],
+        [0, 6],
+        [1, 5],
+        [2, 4],
+        [3]
+    ];
+
+    for (let i = 0; i < rows.length; i++) {
+        for (let j = 0; j < 7; j++) {
+            if (rows[i].includes(j)) {
+                document.write("*");
+            } else {
+                document.write("&ensp;");
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

@@ -5,31 +5,28 @@
     <title>Luyện Tập 1</title>
 </head>
 <body>
-<!--<h3>Bài 1</h3>-->
-<!--<script>-->
-<!--    let arrNumbers1 = [];-->
-<!--    let num;-->
-<!--    for (let i = 0; i < 10; i++) {-->
-<!--        num = prompt('Nhập phần tử số ' + i + ":")-->
-<!--        arrNumbers1[i] = num-->
-<!--    }-->
-<!--    let resultNum = [];-->
-<!--    let resultIndex = [];-->
-<!--    for (let j = 0; j < arrNumbers.length; j++) {-->
-<!--        if (arrNumbers[j] >= 10) {-->
-<!--            resultNum.push(arrNumbers[j]);-->
-<!--            resultIndex.push(j)-->
-<!--        }-->
-<!--    }-->
-<!--    console.log('Number greater than 10: ' + resultNum + ' at index: ' + resultIndex)-->
-<!--</script>-->
+<h3>Bài 1</h3>
+<script>
+    let arrNumbers1 = [];
+    for (let i = 0; i < 10; i++) {
+        arrNumbers1[i] = prompt('Nhập phần tử số ' + i + ":")
+    }
+    let resultNum = [];
+    let resultIndex = [];
+    for (let j = 0; j < arrNumbers1.length; j++) {
+        if (arrNumbers1[j] >= 10) {
+            resultNum.push(arrNumbers1[j]);
+            resultIndex.push(j)
+        }
+    }
+    console.log('Number greater than 10: ' + resultNum + ' at index: ' + resultIndex)
+</script>
 
 <h3>Bài 2</h3>
 <script>
     let arrNum = [];
     for (let i = 0; i < 5; i++) {
-        let numb = +prompt('Nhập phần tử số ' + i + ":")
-        arrNum[i] = numb
+        arrNum[i] = +prompt('Nhập phần tử số ' + i + ":")
     }
     let max = arrNum[0];
     for (let j = 0; j < arrNum.length; j++) {
@@ -40,91 +37,90 @@
 
 </script>
 
-<!--<h3>Bài 3</h3>-->
-<!--<script>-->
-<!--    let arrNumbers2 = [];-->
-<!--    for (let i = 0; i < 10; i++) {-->
-<!--        let num2 = +prompt('Nhập phần tử số ' + i + ":")-->
-<!--        arrNumbers2[i] = num2-->
-<!--    }-->
-<!--    let max = arrNumbers2[0];-->
-<!--    let total = aver = 0-->
-<!--    for (let j = 0; j < arrNumbers2.length; j++) {-->
-<!--        if (arrNumbers2[j] > max) {-->
-<!--            max = arrNumbers2[j]-->
-<!--        }-->
-<!--        total += arrNumbers2[j];-->
-<!--    }-->
-<!--    aver = total / arrNumbers2.length-->
-<!--    console.log('Max is: ' + max + ' Average Array is: ' + aver)-->
-<!--</script>-->
+<h3>Bài 3</h3>
+<script>
+    let arrNumbers2 = [];
+    for (let i = 0; i < 10; i++) {
+        arrNumbers2[i] = +prompt('Nhập phần tử số ' + i + ":")
+    }
+    let max = arrNumbers2[0];
+    let total = aver = 0
+    for (let j = 0; j < arrNumbers2.length; j++) {
+        if (arrNumbers2[j] > max) {
+            max = arrNumbers2[j]
+        }
+        total += arrNumbers2[j];
+    }
+    aver = total / arrNumbers2.length
+    console.log('Max is: ' + max + ' Average Array is: ' + aver)
+</script>
 
-<!--<h3>Bài 6</h3>-->
-<!--<script>-->
-<!--    let arrNumbers3 = [];-->
-<!--    for (let i = 0; i < 10; i++) {-->
-<!--        let num3 = +prompt('Nhập phần tử số ' + i + ":")-->
-<!--        if (Number.isInteger(num3)) {-->
-<!--            arrNumbers3[i] = num3-->
-<!--        } else {-->
-<!--            alert('Xin mời nhập lại');-->
-<!--            i=i-1}-->
-<!--    }-->
-<!--    let element = +prompt("Nhập số muốn tìm:");-->
-<!--    let arrIndex=[];-->
-<!--    if(arrNumbers3.indexOf(element)!==-1){-->
-<!--        for(let j = 0;j < arrNumbers3.length;j++){-->
-<!--            if(arrNumbers3[j]===element){-->
-<!--                arrIndex.push(j)-->
-<!--            }-->
-<!--        }console.log(element+' is in the array at index '+ arrIndex.join(';'))-->
-<!--    }else console.log(element+' is not in the array')-->
+<h3>Bài 6</h3>
+<script>
+    let arrNumbers3 = [];
+    for (let i = 0; i < 10; i++) {
+        let num3 = +prompt('Nhập phần tử số ' + i + ":")
+        if (Number.isInteger(num3)) {
+            arrNumbers3[i] = num3
+        } else {
+            alert('Xin mời nhập lại');
+            i=i-1}
+    }
+    let element = +prompt("Nhập số muốn tìm:");
+    let arrIndex=[];
+    if(arrNumbers3.indexOf(element)!==-1){
+        for(let j = 0;j < arrNumbers3.length;j++){
+            if(arrNumbers3[j]===element){
+                arrIndex.push(j)
+            }
+        }console.log(element+' is in the array at index '+ arrIndex.join(';'))
+    }else console.log(element+' is not in the array')
 
-<!--</script>-->
+</script>
 
-<!--<h3>Bài 7</h3>-->
-<!--<script>-->
-<!--    let arrNumbers4 = [];-->
-<!--    for (let i = 0; i < 5; i++) {-->
-<!--        let num4 = +prompt('Nhập phần tử số ' + i + ":")-->
-<!--        if (Number.isInteger(num4)) {-->
-<!--            arrNumbers4[i] = num4-->
-<!--        } else {-->
-<!--            alert('Xin mời nhập lại');-->
-<!--            i=i-1}-->
-<!--    }-->
-<!--    let element2 = prompt("Nhập số muốn tìm:");-->
-<!--    let check=arrNumbers4.join('');-->
-<!--    console.log(check)-->
-<!--    let arrResult=[];-->
-<!--    if(check.indexOf(element2)!==-1){-->
-<!--        for(let j = 0;j < check.length;j++) {-->
-<!--            if (check[j] !== element2) {-->
-<!--                arrResult.push(check[j])-->
-<!--            }-->
-<!--        }-->
-<!--    }console.log(arrResult)-->
-<!--</script>-->
+<h3>Bài 7</h3>
+<script>
+    let arrNumbers4 = [];
+    for (let i = 0; i < 5; i++) {
+        let num4 = +prompt('Nhập phần tử số ' + i + ":")
+        if (Number.isInteger(num4)) {
+            arrNumbers4[i] = num4
+        } else {
+            alert('Xin mời nhập lại');
+            i=i-1}
+    }
+    let element2 = prompt("Nhập số muốn tìm:");
+    let check=arrNumbers4.join('');
+    console.log(check)
+    let arrResult=[];
+    if(check.indexOf(element2)!==-1){
+        for(let j = 0;j < check.length;j++) {
+            if (check[j] !== element2) {
+                arrResult.push(check[j])
+            }
+        }
+    }console.log(arrResult)
+</script>
 
-<!--<h3>Bài 8</h3>-->
+<h3>Bài 8</h3>
 
-<!--<script>-->
-<!--    let arrNumbersA = arrNumbersB = arrNumbersC = [];-->
-<!--    let numA, numB;-->
-<!--    for (let i = 0; i < 10; i++) {-->
-<!--        numA = prompt('Nhập phần tử số mảng A ' + i + ":")-->
-<!--        arrNumbersA[i] = numA-->
-<!--    }-->
-<!--    for (let i = 0; i < 10; i++) {-->
-<!--        numB = prompt('Nhập phần tử số mảng B ' + i + ":")-->
-<!--        arrNumbersB[i] = numB-->
-<!--    }-->
-<!--    arrNumbersC= arrNumbersA.concat(arrNumbersB)-->
-<!--    arrNumbersC.sort(function (a, b) {-->
-<!--        return a - b-->
-<!--    })-->
-<!--    arrNumbersC.reverse()-->
-<!--    console.log(arrNumbersC)-->
-<!--</script>-->
+<script>
+    let arrNumbersA = arrNumbersB = arrNumbersC = [];
+    let numA, numB;
+    for (let i = 0; i < 10; i++) {
+        numA = prompt('Nhập phần tử số mảng A ' + i + ":")
+        arrNumbersA[i] = numA
+    }
+    for (let i = 0; i < 10; i++) {
+        numB = prompt('Nhập phần tử số mảng B ' + i + ":")
+        arrNumbersB[i] = numB
+    }
+    arrNumbersC= arrNumbersA.concat(arrNumbersB)
+    arrNumbersC.sort(function (a, b) {
+        return a - b
+    })
+    arrNumbersC.reverse()
+    console.log(arrNumbersC)
+</script>
 </body>
 </html>

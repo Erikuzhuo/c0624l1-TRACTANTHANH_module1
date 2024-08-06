@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+    <style>
+        button{
+            cursor: pointer;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+<h2>Từ Điển</h2>
+Dịch Từ: <input type="text" id="text">
+<button type="button" onclick="translate()" onmouseover="mouseOver()" onmouseout="mouseOut()" id="button">Dịch</button>
+<p id="result">Kết Quả:</p>
+<script>
+    function mouseOut(){
+        document.getElementById('button').style.backgroundColor='gold';
+    }
+    function mouseOver(){
+    document.getElementById('button').style.backgroundColor='gray';
+    }
+    function translate() {
+        let check = document.getElementById('text').value;
+        let upper = 'ABCDEFGHIJKLMNOPQRSTUVXWY';
+        let arrText = [];
+        for (let i = 0; i < check.length; i++) {
+            if (upper.indexOf(check[i]) !== -1) {
+                arrText.push(check[i].toLowerCase());
+            } else arrText.push(check[i])
+        }
+        let text = arrText.join('');
+
+
+        let arrFrom = ['school', 'go', 'sleep', 'car', 'like', 'dislike'];
+        let arrTo = ['Trường', 'Đi', 'Ngủ', 'Xe', 'Thích', 'không Thích'];
+        for (let j = 0; j < arrFrom.length; j++) {
+            if (arrFrom.indexOf(text)===-1) {
+                document.getElementById('result').innerHTML = 'Không tìm thấy kết quả'
+            }
+            document.getElementById('result').innerHTML = 'Kết Quả: ' + arrTo[arrFrom.indexOf(text)]
+        }
+    }
+</script>
+<!--hoặc-->
+<script>
+    function mouseOut(){
+        document.getElementById('button').style.backgroundColor='gold';
+    }
+    function mouseOver(){
+        document.getElementById('button').style.backgroundColor='gray';
+    }
+    function translate() {
+        let text = document.getElementById('text').value;
+        text=text.toLowerCase()
+        let arrFrom = ['school', 'go', 'sleep', 'car', 'like', 'dislike'];
+        let arrTo = ['Trường', 'Đi', 'Ngủ', 'Xe', 'Thích', 'không Thích'];
+        for (let j = 0; j < arrFrom.length; j++) {
+            if (arrFrom.indexOf(text)===-1) {
+                document.getElementById('result').innerHTML = 'Không tìm thấy kết quả'
+            }
+            document.getElementById('result').innerHTML = 'Kết Quả: ' + arrTo[arrFrom.indexOf(text)]
+        }
+    }
+</script>
+</body>
+</html>

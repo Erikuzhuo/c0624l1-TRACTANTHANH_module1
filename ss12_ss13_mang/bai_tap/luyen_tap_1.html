@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện Tập 1</title>
+</head>
+<body>
+<h3>Bài 1</h3>
+<script>
+    let arrNumbers1 = [];
+    for (let i = 0; i < 10; i++) {
+        arrNumbers1[i] = prompt('Nhập phần tử số ' + i + ":")
+    }
+    let resultNum = [];
+    let resultIndex = [];
+    for (let j = 0; j < arrNumbers1.length; j++) {
+        if (arrNumbers1[j] >= 10) {
+            resultNum.push(arrNumbers1[j]);
+            resultIndex.push(j)
+        }
+    }
+    console.log('Number greater than 10: ' + resultNum + ' at index: ' + resultIndex)
+</script>
+
+<h3>Bài 2</h3>
+<script>
+    let arrNum = [];
+    for (let i = 0; i < 5; i++) {
+        arrNum[i] = +prompt('Nhập phần tử số ' + i + ":")
+    }
+    let max = arrNum[0];
+    for (let j = 0; j < arrNum.length; j++) {
+        if (arrNum[j] > max) {
+            max = arrNum[j]
+        }
+    }console.log('Max is: '+max+' at index: '+arrNum.indexOf(max))
+
+</script>
+
+<h3>Bài 3</h3>
+<script>
+    let arrNumbers2 = [];
+    for (let i = 0; i < 10; i++) {
+        arrNumbers2[i] = +prompt('Nhập phần tử số ' + i + ":")
+    }
+    let max = arrNumbers2[0];
+    let total = aver = 0
+    for (let j = 0; j < arrNumbers2.length; j++) {
+        if (arrNumbers2[j] > max) {
+            max = arrNumbers2[j]
+        }
+        total += arrNumbers2[j];
+    }
+    aver = total / arrNumbers2.length
+    console.log('Max is: ' + max + ' Average Array is: ' + aver)
+</script>
+
+<h3>Bài 4</h3>
+<script>
+    let intNumbers=[5,4,9,66,610,32,77,53];
+    intNumbers.sort(function (a,b){
+        return a-b
+    })
+    intNumbers.reverse()
+    document.write(intNumbers)
+
+</script>
+
+<h3>Bài 5</h3>
+<script>
+    let arrNums=[-1,-15,-22,13,-14,5,86,9]
+    let arrNeg=[];
+    let count=0;
+    let arrIndex=[];
+    for (let i of arrNums) {
+        if(i<0){
+            count+=1;
+            arrNeg.push(parseInt(i));
+            arrIndex.push(arrNums.indexOf(i));
+        }
+    }
+    document.write('Tổng có '+count+' Số Nguyên Âm trong chuỗi là '+arrNeg.join(',')+' tại vị trí '+arrIndex.join(','));
+</script>
+
+<h3>Bài 6</h3>
+<script>
+    let arrNumbers3 = [];
+    for (let i = 0; i < 10; i++) {
+        let num3 = +prompt('Nhập phần tử số ' + i + ":")
+        if (Number.isInteger(num3)) {
+            arrNumbers3[i] = num3
+        } else {
+            alert('Xin mời nhập lại');
+            i=i-1}
+    }
+    let element = +prompt("Nhập số muốn tìm:");
+    let arrIndex=[];
+    if(arrNumbers3.indexOf(element)!==-1){
+        for(let j = 0;j < arrNumbers3.length;j++){
+            if(arrNumbers3[j]===element){
+                arrIndex.push(j)
+            }
+        }console.log(element+' is in the array at index '+ arrIndex.join(';'))
+    }else console.log(element+' is not in the array')
+
+</script>
+
+<h3>Bài 7</h3>
+<script>
+    let arrNumbers4 = [];
+    for (let i = 0; i < 5; i++) {
+        let num4 = +prompt('Nhập phần tử số ' + i + ":")
+        if (Number.isInteger(num4)) {
+            arrNumbers4[i] = num4
+        } else {
+            alert('Xin mời nhập lại');
+            i=i-1}
+    }
+    let element2 = prompt("Nhập số muốn tìm:");
+    let check=arrNumbers4.join('');
+    console.log(check)
+    let arrResult=[];
+    if(check.indexOf(element2)!==-1){
+        for(let j = 0;j < check.length;j++) {
+            if (check[j] !== element2) {
+                arrResult.push(check[j])
+            }
+        }
+    }console.log(arrResult)
+</script>
+
+<h3>Bài 8</h3>
+<script>
+    let arrNumbersA = arrNumbersB = arrNumbersC = [];
+    let numA, numB;
+    for (let i = 0; i < 10; i++) {
+        numA = prompt('Nhập phần tử số mảng A ' + i + ":")
+        arrNumbersA[i] = numA
+    }
+    for (let i = 0; i < 10; i++) {
+        numB = prompt('Nhập phần tử số mảng B ' + i + ":")
+        arrNumbersB[i] = numB
+    }
+    arrNumbersC= arrNumbersA.concat(arrNumbersB)
+    arrNumbersC.sort(function (a, b) {
+        return a - b
+    })
+    arrNumbersC.reverse()
+    console.log(arrNumbersC)
+</script>
+
+</body>
+</html>

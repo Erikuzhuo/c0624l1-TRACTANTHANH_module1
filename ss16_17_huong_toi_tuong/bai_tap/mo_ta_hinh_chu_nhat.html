@@ -1,10 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Mô Tả Hình Chữ Nhật</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="1000px" height="500px"></canvas>
+<p id="result"></p>
+<button type="button" onclick="changeValue()">Thay đổi giá trị</button>
+<div id="Cách 1">
+    <script>
+        /* Tạo class tứ giác Rectangle với chiều dài và dọc */
+        function Rectangle(width, height) {
+            this.height = height;
+            this.width = width;
+            this.getArea = function () {
+                return this.height * this.width;
+            }
+            this.getPerimeter = function () {
+                return (this.width + this.height) * 2
+            }
+            this.drawRect = function () {
+                let rect = document.getElementById('myCanvas');
+                let draw = rect.getContext('2d');
+                draw.clearRect(10,10,rect.width, rect.height) //remove the exist canvas//
+                draw.fillStyle = 'purple';
+                draw.fillRect(10, 10, this.width, this.height)
+                draw.stroke();
+            }
+            this.changeHeight = function (height) {
+                this.height = height
+            }
+            this.changeWidth = function (width) {
+                this.width = width
+            }
+        }
+            /*Nhận dữ liệu ngang và dọc từ người dùng và vẽ hình */
+            let width = +prompt('Nhập chiều ngang hình tứ giác:');
+            let height = +prompt('Nhập chiều dọc hình tứ giác:');
+            let rect1 = new Rectangle(width,height);
+
+            while (rect1.height < 0 || rect1.width < 0) {
+                rect1.changeWidth(+prompt('Nhập lại chiều ngang hình tứ giác:')) ;
+                rect1.changeHeight(+prompt('Nhập lại chiều dọc hình tứ giác:')) ;
+            }
+            rect1.drawRect();
+            document.getElementById('result').innerHTML = "Diện tích tứ giác: " + rect1.getArea() + '; Chu Vi tứ giác: ' + rect1.getPerimeter();
+
+            /* thay đổi giá trị ngang và dọc */
+            function changeValue() {
+                rect1.changeHeight(+prompt('Nhập mới chiều dài hình tứ giác:'));
+                rect1.changeWidth(+prompt('Nhập mới chiều rộng hình tứ giác:'));
+                rect1.drawRect()
+                document.getElementById('result').innerHTML = "Diện tích tứ giác: " + rect1.getArea() + '; Chu Vi tứ giác: ' + rect1.getPerimeter();
+            }
+    </script>
+</div>
+<div id="Cách 2">
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            getArea() {
+                return this.width * this.height
+            }
+
+            getPerimeter() {
+                return 2 * (this.width + this.height)
+            }
+
+            drawRect() {
+                let rect = document.getElementById('myCanvas');
+                let draw = rect.getContext('2d');
+                draw.beginPath()
+                draw.clearRect(10, 10, rect.width, rect.height);
+                draw.fillStyle = 'purple'
+                draw.fillRect(10, 10, this.width, this.height);
+                draw.stroke();
+            }
+
+            changeWidth(width) {
+                this.width = width
+            }
+
+            changeHeight(height) {
+                this.height = height
+            }
+        }
+
+        /*Nhận dữ liệu ngang và dọc từ người dùng và vẽ hình */
+        let width = +prompt('Nhập chiều ngang hình tứ giác:');
+        let height = +prompt('Nhập chiều dọc hình tứ giác:');
+        let rect1 = new Rectangle(width, height);
+
+        while (rect1.height < 0 || rect1.width < 0) {
+            rect1.changeWidth(+prompt('Nhập lại chiều ngang hình tứ giác:'));
+            rect1.changeHeight(+prompt('Nhập lại chiều dọc hình tứ giác:'));
+        }
+        rect1.drawRect();
+        document.getElementById('result').innerHTML = "Diện tích tứ giác: " + rect1.getArea() + '; Chu Vi tứ giác: ' + rect1.getPerimeter();
+
+        /* thay đổi giá trị ngang và dọc */
+        function changeValue() {
+            rect1.changeWidth(+prompt('Nhập mới chiều ngang hình tứ giác:'));
+            rect1.changeHeight(+prompt('Nhập mới chiều dọc hình tứ giác:'));
+            rect1.drawRect()
+            document.getElementById('result').innerHTML = "Diện tích tứ giác: " + rect1.getArea() + '; Chu Vi tứ giác: ' + rect1.getPerimeter();
+        }
+    </script>
+</div>
 </body>
 </html>

@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Xây Dựng Lớp Hình Tròn</title>
 </head>
 <body>
-$END$
+<script>
+    // function Circle(radius,color){
+    //     this.radius=radius;
+    //     this.color=color;
+    //     this.getColor=function (){
+    //         return this.color
+    //     }
+    //     this.getRadius=function(){
+    //         return this.radius;
+    //     }
+    //     this.getArea=function(){
+    //         return Math.PI*radius*radius;
+    //     }
+    // }
+    // let circle=new Circle(2,'red');
+    // document.write('Circle Radius: ' + circle.getRadius() + '; Circle Area: '+circle.getArea());
+
+    class Circle{
+        constructor() {
+            this.radius = 2;
+            this.color = 'red';
+        }
+        getCircle(){
+            return this.radius
+        }
+        getCircleArea(){
+            return Math.PI*this.radius*this.radius;
+        }
+    }
+    let circle = new Circle();
+    document.write("Radius: " + circle.getCircle() + "<br>");
+    document.write("Area: " + circle.getCircleArea() + "<br>");
+    document.write("Color: " + circle.color);
+</script>
 </body>
 </html>

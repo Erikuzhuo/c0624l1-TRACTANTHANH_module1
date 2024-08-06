@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng cơ bản</title>
+</head>
+<body>
+<h2>Sample Screen:</h2>
+<input type="text" id="input">
+<button type="button" onclick="add()">Add</button>
+<button type="button" id="display" onclick="display()">Display</button>
+<hr width="50%" align="left">
+<p id="screen"></p>
+<script>
+    let array=[];
+    function add(){
+        let input=document.getElementById('input').value;
+        array.push(input);
+        console.log(array[array.length -1]);
+    }
+    function display(){
+        let display="";
+        for(let i=0;i<array.length;i++){
+           display+="Element "+i+" = "+array[i]+'<br>'
+            document.getElementById('screen').innerHTML=display
+        }
+    }
+</script>
+</body>
+</html>

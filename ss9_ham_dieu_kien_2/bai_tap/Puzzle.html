@@ -1,10 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Puzzle</title>
+    <style>
+        img {
+            cursor: pointer;
+            box-shadow: 4px 4px 10px black;
+        }
+    </style>
 </head>
 <body>
-$END$
+<img id="image1" onclick="changePic(1)" src="anh/joe1.jpg" height="234" width="1273"
+     alt="image not be found"/>
+<img id="image2" onclick="changePic(2)" src="anh/kim2.jpg" height="234" width="1273"
+     alt="image not be found"/>
+<img id="image3" onclick="changePic(3)" src="anh/tap3.jpg" height="234" width="1273"
+     alt="image not be found"/>
+
+<script>
+    let pic1 = document.getElementById('image1').src;
+    let pic2 = document.getElementById('image2').src;
+    let pic3 = document.getElementById('image3').src;
+
+    function changePic(num) {
+        switch (num) {
+            case 1:
+                if (pic1.includes("anh/joe1.jpg")) {
+                    pic1 = "anh/kim1.jpg"
+                } else if (pic1.includes("anh/kim1.jpg")) {
+                    pic1 = "anh/tap1.jpg"
+                } else if (pic1.includes("anh/tap1.jpg")) {
+                    pic1 = "anh/joe1.jpg"
+                }
+                document.getElementById('image1').src = pic1
+                break;
+            case 2:
+                if (pic2.includes("anh/joe2.jpg")) {
+                    pic2 = "anh/kim2.jpg"
+                } else if (pic2.includes("anh/kim2.jpg")) {
+                    pic2 = "anh/tap2.jpg"
+                } else if (pic2.includes("anh/tap2.jpg")) {
+                    pic2 = "anh/joe2.jpg"
+                }
+                document.getElementById('image2').src = pic2
+                break;
+            case 3:
+                if (pic3.includes("anh/joe3.jpg")) {
+                    pic3 = "anh/kim3.jpg"
+                } else if (pic3.includes("anh/kim3.jpg")) {
+                    pic3 = "anh/tap3.jpg"
+                } else if (pic3.includes("anh/tap3.jpg")) {
+                    pic3 = "anh/joe3.jpg"
+                }
+                document.getElementById('image3').src = pic3
+                break;
+        }
+        if (pic1.includes("anh/joe1.jpg") && pic2.includes("anh/joe2.jpg") && pic3.includes("anh/joe3.jpg")) {
+            document.getElementById('image1').style.boxShadow = "4px 4px 10px red";
+            document.getElementById('image2').style.boxShadow = "4px 4px 10px red";
+            document.getElementById('image3').style.boxShadow = "4px 4px 10px red";
+        } else if (pic1.includes("anh/kim1.jpg") && pic2.includes("anh/kim2.jpg") && pic3.includes("anh/kim3.jpg")) {
+            document.getElementById('image1').style.boxShadow = "4px 4px 10px red";
+            document.getElementById('image2').style.boxShadow = "4px 4px 10px red";
+            document.getElementById('image3').style.boxShadow = "4px 4px 10px red";
+        } else if (pic1.includes("anh/tap1.jpg") && pic2.includes("anh/tap2.jpg") && pic3.includes("anh/tap3.jpg")) {
+            document.getElementById('image1').style.boxShadow = "4px 4px 10px red";
+            document.getElementById('image2').style.boxShadow = "4px 4px 10px red";
+            document.getElementById('image3').style.boxShadow = "4px 4px 10px red";
+        } else {
+            document.getElementById('image1').style.boxShadow = "4px 4px 10px black";
+            document.getElementById('image2').style.boxShadow = "4px 4px 10px black";
+            document.getElementById('image3').style.boxShadow = "4px 4px 10px black";
+        }
+    }
+
+</script>
 </body>
 </html>

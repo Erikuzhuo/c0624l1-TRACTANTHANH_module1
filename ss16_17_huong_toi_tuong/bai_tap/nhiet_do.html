@@ -1,10 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Mô Tả Temperature</title>
 </head>
 <body>
-$END$
+<input type="number" id="tempFrom" value="0">
+<select id="select">
+    <option name="temperature" value="celsius">Celsius</option>
+    <option name="temperature" value="kelvin">Kelvin</option>
+    <option name="temperature" value="fahrenheit">Fahrenheit</option>
+</select>
+<button type="button" onclick="convertTempt()">Convert Temperature</button>
+<hr width="25%" align="left">
+<p type="text" id="tempTo1">
+<p type="text" id="tempTo2">
+    <script id="cách 1">
+        function Temperature(temper) {
+            this.temper = temper
+            this.celsiusConvertFahrenheit = function () {
+                return this.temper * 9 / 5 + 32
+            }
+            this.celsiusConvertKelvin = function () {
+                return this.temper + 273.15
+            }
+            this.fahrenheitConvertCelsius = function () {
+                return (this.temper - 32) / (9 / 5)
+            }
+            this.fahrenheitConvertKelvin = function () {
+                return (this.temper - 273.15) * 9 / 5 + 32.
+            }
+            this.kelvinConvertCelsius = function () {
+                return this.temper - 273.15
+            }
+            this.kelvinConvertFahrenheit = function () {
+                return this.temper - 32 / (9 / 5) + 273.15
+            }
+        }
+
+        function convertTempt() {
+            let temperature = new Temperature(+document.getElementById('tempFrom').value)
+            let choice = document.getElementById('select').value
+            if (choice === 'celsius' && temperature.temper >= -273) {
+                document.getElementById('tempTo1').innerHTML = temperature.celsiusConvertFahrenheit() + " °F"
+                document.getElementById('tempTo2').innerHTML = temperature.celsiusConvertKelvin() + " °K"
+            } else if (choice === 'kelvin' && temperature.temper >= 0.15) {
+                document.getElementById('tempTo1').innerHTML = temperature.kelvinConvertCelsius() + " °C"
+                document.getElementById('tempTo2').innerHTML = temperature.kelvinConvertFahrenheit() + " °F"
+            } else if (choice === 'fahrenheit' && temperature.temper >= -459.4) {
+                document.getElementById('tempTo1').innerHTML = temperature.fahrenheitConvertCelsius() + " °C"
+                document.getElementById('tempTo2').innerHTML = temperature.fahrenheitConvertKelvin() + " °K"
+            } else alert('xin mời nhập lại')
+        }
+    </script>
+    <script id="cách 2">
+        class Temperature{
+            constructor(temper){
+            this.temper = temper
+                }
+            celsiusConvertFahrenheit(){
+                return this.temper * 9 / 5 + 32;
+            }
+            celsiusConvertKelvin(){
+                return this.temper + 273.15
+            }
+            fahrenheitConvertCelsius(){
+                return (this.temper - 32) / (9 / 5)
+            }
+            fahrenheitConvertKelvin() {
+                return (this.temper - 273.15) * 9 / 5 + 32.
+            }
+            kelvinConvertCelsius(){
+                return this.temper - 273.15
+            }
+            kelvinConvertFahrenheit() {
+                return this.temper - 32 / (9 / 5) + 273.15
+            }
+        }
+
+        function convertTempt() {
+            let temperature = new Temperature(+document.getElementById('tempFrom').value)
+            let choice = document.getElementById('select').value
+            if (choice === 'celsius' && temperature.temper >= -273) {
+                document.getElementById('tempTo1').innerHTML = temperature.celsiusConvertFahrenheit() + " °F"
+                document.getElementById('tempTo2').innerHTML = temperature.celsiusConvertKelvin() + " °K"
+            } else if (choice === 'kelvin' && temperature.temper >= 0.15) {
+                document.getElementById('tempTo1').innerHTML = temperature.kelvinConvertCelsius() + " °C"
+                document.getElementById('tempTo2').innerHTML = temperature.kelvinConvertFahrenheit() + " °F"
+            } else if (choice === 'fahrenheit' && temperature.temper >= -459.4) {
+                document.getElementById('tempTo1').innerHTML = temperature.fahrenheitConvertCelsius() + " °C"
+                document.getElementById('tempTo2').innerHTML = temperature.fahrenheitConvertKelvin() + " °K"
+            } else alert('xin mời nhập lại')
+        }
+    </script>
 </body>
 </html>

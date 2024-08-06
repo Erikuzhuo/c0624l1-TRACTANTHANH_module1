@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<script>-->
+<!-- let subElementQty=prompt('Nhập Số lượng Mảng Con: ')-->
+<!-- let subElementQty2=prompt('Nhập Số lượng phần tử: ')-->
+<!-- let number1,number2;-->
+<!-- let arrNumber1=arrNumber2=[];-->
+<!-- for(let i=0;i<subElementQty;i++){-->
+<!--     number1=prompt('Nhập tên mảng con:')-->
+<!--     arrNumber1[i]=number1;-->
+<!--     for(let j=0;j<subElementQty2;j++) {-->
+<!--         number2 = prompt('Nhập tên phần tử:')-->
+<!--         arrNumber2[j]=number2;-->
+<!--     }-->
+<!-- }console.log(arrNumber1[arrNumber2])-->
+<!--</script>-->
+
+<!--<script>-->
+<!--    let arr2D=[];-->
+<!--    for (let i=0;i<3;i++){-->
+<!--        arr2D[i]=[];-->
+<!--        for(let j=0;j<3;j++){-->
+<!--            arr2D[i][j]= prompt('Nhập tên phần tử:')-->
+<!--        }-->
+<!--    }console.log(arr2D)-->
+
+<!--</script>-->
+
+<script>
+    let arr7 = [];
+    for (let i = 0; i < 10; i++) {
+        arr7[i] = Math.floor(Math.random() * 11);  //tạo số nguyên từ 0 đến 10
+    }
+    console.log(arr7.toString());
+    let numberV = +prompt("Nhập 1 số nguyên: ");
+    debugger
+    let check = false;
+    for (let i = 0; i < arr7.length; i++) {
+        if (numberV === arr7[i]) {
+            //alert("V is in the array");
+            check = true;
+            for (let j = i; j < arr7.length; j++) {
+                if (j === arr7.length - 1) {
+                    arr7[j] = 0;
+                } else {
+                    arr7[j] = arr7[j + 1];
+                }
+            }
+            console.log(arr7.toString());
+        }
+    }
+    if (check) {
+        alert("Số đã nhập thuộc mảng và mảng mới là: " + arr7.toString());
+    } else {
+        alert("Số đã nhập không thuộc mảng và mảng là: " + arr7.toString());
+    }
+</script>
+</body>
+</html>

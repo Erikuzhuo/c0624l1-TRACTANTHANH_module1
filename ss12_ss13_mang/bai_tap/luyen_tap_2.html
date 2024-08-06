@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 2</title>
+</head>
+<body>
+<!--<h3>Bài 1</h3>-->
+<!--<script>-->
+<!--    let arrNums = [-->
+<!--        [1, 2, 1, 24],-->
+<!--        [8, 11, 9, 4],-->
+<!--        [7, 0, 7, 27],-->
+<!--        [7, 4, 28, 14],-->
+<!--        [3, 10, 26, 7]-->
+<!--    ];-->
+<!--    for (let i in arrNums) {-->
+<!--        document.write('row ' + i + '<br>')-->
+<!--        for (let j in arrNums[i]) {-->
+<!--            document.write('element ' + arrNums[i][j] + '<br>')-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+<!--<h3>Bài 2</h3>-->
+<!--<script>-->
+<!--    let arrays=[ 'c', 's', 'c', '2', '6', '1' ];-->
+<!--    document.write(arrays.reverse().join(""))-->
+<!--</script>-->
+
+<!--<h3>Bài 3</h3>-->
+<!--<script>-->
+<!--    let arrayNums3=[];-->
+<!--    let arraylenght=+prompt('độ dài mảng: ');-->
+<!--    for (let i = 0; i < arraylenght; i++) {-->
+<!--        arrayNums3.push(+prompt('Nhập Phần Tử '+i))-->
+<!--    }-->
+<!--    let countNums=0;-->
+<!--    for (let element of arrayNums3) {-->
+<!--        if (element * 1 === element){-->
+<!--            countNums+=1-->
+<!--        }-->
+<!--    }document.write('có tổng '+countNums+' phần tử là con số')-->
+<!--</script>-->
+
+<h4>Bài 4</h4>
+<script>
+    let string=prompt('Nhập 1 câu bất kỳ');
+    string=string.trim();
+    count=1;
+    for (let i = 0; i < string.length; i++) {
+    if(string[i]===" "){
+        count+=1
+    }
+    }document.write('Trong câu có ' + count + ' từ')
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<h1>Chuyển Đổi Giữa Feet và Meter</h1>
+<input type="number" id="fromUnit">
+<select id="measure">
+    <option name="measure" value="feet">Feet</option>
+    <option name="measure" value="meter">Meter</option>
+</select>
+<button type="button" onclick="convert()"> Convert</button>
+<hr width="50%" align="left">
+<p id="result"></p>
+<script>
+    function feetToMeter(feet) {
+        return feet * 3.279
+    }
+
+    function meterToFeet(meter) {
+        return meter / 3.279
+    }
+
+    function convert() {
+        let fromUnit = +document.getElementById('fromUnit').value;
+        let unit = document.getElementById('measure').value;
+        if (unit === 'meter') {
+            document.getElementById('result').innerHTML = fromUnit + ' meter = ' + feetToMeter(fromUnit).toFixed(2) + ' feet.';
+        } else if (unit === 'feet')
+            document.getElementById('result').innerHTML = fromUnit + ' feet = ' + meterToFeet(fromUnit).toFixed(2) + ' meter.';
+    }
+
+</script>
+</body>
+</html>

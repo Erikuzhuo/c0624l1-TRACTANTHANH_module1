@@ -6,45 +6,47 @@
 </head>
 <body>
 <script>
-    class ElectricLamp{
+
+    class ElectricLamp {
         constructor(status) {
-            this.status=status
+            this.status = status;
         }
-        turnOff(){
-            console.log( 'This light is Off');
+        turnOff() {
+            this.status = false;
+            console.log('This light is Off');
         }
-        turnOn(){
-            console.log( 'This light is On');
-        }
-    }
-    class SwitchButton{
-        constructor(status,ElectricLamp) {
-            this.status=status;
-            this.lamp=ElectricLamp;
-        }
-        connectToElectricLamp(ElectricLamp){
-            return this.lamp = ElectricLamp;
-        }
-        switchOff(){
-            this.status=false
-            return this.lamp.turnOff();
-        }
-        switchOn(){
-            this.status=true
-            return this.lamp.turnOn();
+        turnOn() {
+            this.status = true;
+            console.log('This light is On');
         }
     }
 
-    let lamp= new ElectricLamp(false)
-    let button = new SwitchButton(false)
-    button.connectToElectricLamp()
-    for (let i = 0; i < 10 ; i++) {
-        console.log(button.switchOn())
-        console.log(lamp.status);
-        console.log(button.switchOff())
-        console.log(lamp.status);
+    class SwitchButton {
+        constructor(status, lamp = null) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+        connectToElectricLamp(lamp) {
+            this.lamp = lamp;
+        }
+        switch() {
+            if (this.lamp) {
+                if (this.lamp.status) {
+                    this.lamp.turnOff();
+                } else {
+                    this.lamp.turnOn();
+                }
+            }
+        }
     }
 
+    let lamp = new ElectricLamp(false);
+    let button = new SwitchButton(false, lamp);
+
+    for (let i = 0; i < 10; i++) {
+        button.switch();
+        console.log(lamp.status);
+    }
 </script>
 </body>
 </html>

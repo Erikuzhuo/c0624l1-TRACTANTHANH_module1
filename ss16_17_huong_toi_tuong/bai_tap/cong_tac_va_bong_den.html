@@ -6,47 +6,61 @@
 </head>
 <body>
 <script>
-
     class ElectricLamp {
-        constructor(status) {
-            this.status = status;
+        constructor() {
+            this.status = false
         }
-        turnOff() {
-            this.status = false;
-            console.log('This light is Off');
-        }
-        turnOn() {
-            this.status = true;
-            console.log('This light is On');
-        }
-    }
 
-    class SwitchButton {
-        constructor(status, lamp = null) {
-            this.status = status;
-            this.lamp = lamp;
+        turnOff() {
+            if (this.status) {
+                this.status=false
+                console.log('This light is Off');
+            }
         }
-        connectToElectricLamp(lamp) {
-            this.lamp = lamp;
-        }
-        switch() {
-            if (this.lamp) {
-                if (this.lamp.status) {
-                    this.lamp.turnOff();
-                } else {
-                    this.lamp.turnOn();
-                }
+
+        turnOn() {
+            if (!this.status) {
+                this.status=true
+                console.log('This light is On');
             }
         }
     }
 
-    let lamp = new ElectricLamp(false);
-    let button = new SwitchButton(false, lamp);
+    class SwitchButton {
+        constructor() {
+            this.status = false;
+            this.lamp = null;
+        }
 
+        connectToElectricLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        switchOn() {
+            if (!this.status) {
+                this.status = true
+                this.lamp.turnOn();
+            }
+        }
+        switchOff() {
+            if (this.status) {
+                this.status = false
+                this.lamp.turnOff();
+            }
+        }
+    }
+    let lamp = new ElectricLamp()
+    let button = new SwitchButton()
+    button.connectToElectricLamp(lamp)
+    debugger
     for (let i = 0; i < 10; i++) {
-        button.switch();
+        button.switchOn()
+        console.log(lamp.status);
+        button.switchOff()
         console.log(lamp.status);
     }
+
+
 </script>
 </body>
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+<body>
+<h3>Bài 1</h3>
+<script>
+   function alertMessage(){
+       alert('Xin chao')
+   }
+   alertMessage()
+</script>
+
+<h3>Bài 2</h3>
+<p id="result">Kết quả: </p>
+<script>
+    function add(number){
+        document.getElementById('result').innerHTML='Kết quả: '+number
+        return number+=1
+    }
+    add(13)
+</script>
+
+<h3>Bài 3</h3>
+<script>
+   function sum(number1,number2){
+       if(number1>number2){
+           alert('Số thứ 1 lớn hơn số thứ 2')
+       }else {let sum=number1+number2
+       alert('Tổng 2 số = '+ sum)}
+   }
+   sum(5,6)
+</script>
+
+<h3>Bài 4</h3>
+<script>
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+    }
+    result = 0;
+    alert('Kết quả trước: '+result);
+    result = addNumbers();
+    alert('Kết quả sau: '+result);
+</script>
+
+<h3>Bài 5</h3>
+<p id="result5">Kết Quả: </p>
+<script>
+    let SuperStars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let Stars = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    function searchStar(){
+        let idol=prompt('Nhập tên 1 ngôi sao nổi tiếng: ')
+        for (let name of SuperStars) {
+            name=idol;
+            document.getElementById('result5').innerHTML='Kết Quả:　'+Stars[SuperStars.indexOf((name))];
+        }
+    }
+    searchStar()
+</script>
+
+
+</body>
+</html>

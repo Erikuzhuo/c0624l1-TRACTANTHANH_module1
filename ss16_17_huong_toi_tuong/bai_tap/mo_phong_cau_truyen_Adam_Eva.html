@@ -22,6 +22,7 @@
         isEmpty() {
             if (this.weight === 0) {
                 console.log('Trái táo đã hết.')
+                return this.weight===0;
             } else console.log('Trái táo vẫn còn.');
 
         }
@@ -59,7 +60,7 @@
         }
 
         getName() {
-            console.log('Nhân vật tên: ' + this.name);
+            return this.name
         }
 
         setName(newName) {
@@ -79,12 +80,13 @@
     }
 
     let apple = new Apple(10);
-    let People = [
-        new Human('Adam', 'Male', 65),
-        new Human('Eva', 'Female', 45)
-    ]
+    let adam= new Human('Adam', 'Male', 65);
+    let eva=  new Human('Eva', 'Female', 45)
+    let People = [adam,eva]
+
     while (apple.getWeight() !== 0) {
         for (let i = 0; i < People.length; i++) {
+            console.log(People[i].getName())
             People[i].checkApple(apple)
             apple.isEmpty()
             People[i].eat(apple);
@@ -97,7 +99,7 @@
         console.log('___________________________');
         People[0].getName();
         People[0].setName('Cường');
-        People[1].getName();
+        console.log('Nhân vật tên: ' + People[1].getName());
         People[1].setName('Nhi');
         People[0].isMale();
         People[1].isMale();

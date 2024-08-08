@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+<body>
+<h3>Bài 1</h3>
+<script>
+    function squareNumber(num){
+        return num*num
+    }
+    console.log(squareNumber(5))
+</script>
+
+<h3>Bài 2</h3>
+<script>
+    function calculateCirclePeri(radius){
+        return 2*Math.PI *radius
+    }
+    function calculateCircleArea(radius){
+        return Math.PI*radius*radius
+    }
+    console.log('Chu vi hình tròn: '+calculateCirclePeri(4))
+    console.log('Diện tích hình tròn: '+calculateCircleArea(4))
+</script>
+
+<h3>Bài 3</h3>
+<script>
+    function factorialNumber(num) {
+        let result3=1
+        for (let i = 1; i <= num; i++) {
+            result3 = result3 * i
+        }
+        return result3
+    }
+    alert(factorialNumber(5))
+</script>
+
+<h3>Bài 4</h3>
+<script>
+    let check = +prompt('Nhập vào 1 ký tự: ')
+
+    function checkNumber(element) {
+        if (element / element === 1) {
+            alert(true)
+        } else alert(false)
+    }
+
+    checkNumber(check)
+</script>
+
+<h3>Bài 5</h3>
+<script>
+    function checkMinimum(arrays){
+        let min=arrays[0];
+        for (let i = 0; i < arrays.length; i++) {
+            if(arrays[i]<min){
+                min=arrays[i]
+            }
+        }return min
+    }
+    let Numbers=[9.3,11,5.6]
+    alert(checkMinimum(Numbers))
+</script>
+
+<h3>Bài 6</h3>
+<script>
+    function checkInteger(num){
+        if (num > 0 && Number.isInteger(num)) {
+            alert(true)
+        }else alert(false)
+    }
+    checkInteger(-3)
+</script>
+
+<h3>Bài 7</h3>
+<script>
+    function changePosition(a, b) {
+        let temp=a
+        a=b
+        b=temp
+        return[a,b]
+    }
+
+    alert(changePosition(1, 2))
+</script>
+
+<h3>Bài 8</h3>
+<script>
+    function changePosition(arrays){
+        return arrays.reverse()
+    }
+    let Numbers=[1,2]
+    alert(changePosition(Numbers))
+</script>
+
+<h3>Bài 9</h3>
+<script>
+    let Elements = ['a', '@', 3, 15, 'b', '@', '-l'];
+
+    function checkElement(arrays, check) {
+        let index = [];
+        if (arrays.indexOf(check) === -1) {
+            alert('-1');
+        } else {
+            for (let i = 0; i < arrays.length; i++) {
+                if (arrays[i] === check) {
+                    index.push(i);
+                }
+            }
+            alert(check + ' xuất hiện trong mảng tại các vị trí ' + index.join(';'))
+        }
+    }
+
+    checkElement(Elements, 15)
+
+</script>
+
+</body>
+</html>

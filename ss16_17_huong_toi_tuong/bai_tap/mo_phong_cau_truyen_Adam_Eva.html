@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        decrease() {
+            this.weight--;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        isEmpty() {
+            if (this.weight === 0) {
+                console.log('Trái táo đã hết.')
+            } else console.log('Trái táo vẫn còn.');
+
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender === 'Male') {
+                console.log(this.name + ' là Nam');
+            } else console.log(this.name + " Không phải Nam, mà là Nữ");
+        }
+
+        setGender(newGender) {
+            this.gender = newGender
+            console.log(this.name + ' giờ là ' + this.gender);
+        }
+
+        checkApple(apple) {
+            console.log('Trái táo còn: ' + apple.getWeight() + ' dv');
+        }
+
+        eat(apple) {
+            apple.decrease();
+            console.log(this.name + ' đã ăn 1 dv táo')
+        }
+
+        say(String) {
+            console.log('"' + String + '"');
+        }
+
+        getName() {
+            console.log('Nhân vật tên: ' + this.name);
+        }
+
+        setName(newName) {
+            let oldName = this.name
+            this.name = newName;
+            console.log('Nhân vật ' + oldName + ' hiện tên: ' + this.name);
+        }
+
+        getWeight() {
+            console.log('Cân nặng của ' + this.name + ': ' + this.weight);
+        }
+
+        setWeight() {
+            this.weight++
+            console.log('Cân nặng của ' + this.name + ' hiện tại: ' + this.weight);
+        }
+    }
+
+    let apple = new Apple(10);
+    let People = [
+        new Human('Adam', 'Male', 65),
+        new Human('Eva', 'Female', 45)
+    ]
+    while (apple.getWeight() !== 0) {
+        for (let i = 0; i < People.length; i++) {
+            People[i].checkApple(apple)
+            apple.isEmpty()
+            People[i].eat(apple);
+            People[i].say('xộp!!!! ực...ực...')
+            People[i].setWeight();
+            console.log('---------------')
+        }
+    }
+        console.log('Adam và Eva đã ăn trái cấm như thế~ lãng');
+        console.log('___________________________');
+        People[0].getName();
+        People[0].setName('Cường');
+        People[1].getName();
+        People[1].setName('Nhi');
+        People[0].isMale();
+        People[1].isMale();
+
+</script>
+</body>
+</html>

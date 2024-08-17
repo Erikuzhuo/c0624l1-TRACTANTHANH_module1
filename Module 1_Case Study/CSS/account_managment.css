@@ -1,0 +1,42 @@
+div.inputAccess{
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.inputAccess table{
+    margin-left: 5%;
+}
+.inputAccess h4{
+    font-weight: bolder;
+    font-style: oblique;
+    color: green;
+}
+div.resultAccess{
+    overflow-x: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 2%;
+    width: 100%;
+}
+.resultAccess caption{
+    font-size: medium;
+    font-weight: bolder;
+    color: red;
+}
+.inputAccess th{
+    vertical-align: center;
+
+}
+.inputAccess td{
+    padding:5px;
+    text-align: center;
+}
+select.accountSelect{
+    width: 185px;
+    margin-left: 1px;
+    padding: 2%;
+}
+.inputAccess input{
+    width: 185px;
+}

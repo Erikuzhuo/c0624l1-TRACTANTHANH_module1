@@ -1,0 +1,28 @@
+table.aboutUs{
+    margin: 5% auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+th.aboutUs {
+    text-align: center;
+    border-right: gold solid 4px;
+    padding: 20px;
+    color: blue;
+}
+
+pre.aboutUs {
+    border-collapse: collapse;
+    border: none;
+    vertical-align: center;
+    font-family: Arial, serif;
+    font-size: large;
+    font-weight: bold;
+    background-color: white;
+}
+
+.hr {
+    border: 0;
+    height: 5px;
+    background-color: black;
+    width: 30%
+}

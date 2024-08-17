@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign-Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="javascript/class.js"></script>
+    <script src="javascript/Signup.js"></script>
+    <script src="javascript/account_managment.js"></script>
+
+</head>
+<body>
+<!-- Nav Bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html">MLT Fulfilment Warehouse System</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="account_management.html">Account Setting</a></li>
+                <li><a href="customer_management.html">Customer List</a></li>
+                <li><a href="warehouse_management.html">Parcel Managment</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- User and Log in href is empty for meanwhile-->
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><input type="search" placeholder="Tell Us What Do You Looking For? " style="margin-top: 7%"></li>
+                <li><button id="search" type="submit" style="margin-top: 22%;background-color: gold;color: black">Search</button></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Table -->
+
+<div></div>
+    <h2>Đăng Ký Tài Khoản</h2>
+    <form id='signUpForm' action="javascript/Signup.js" method="post">
+        <table>
+            <tr>
+                <th>
+                    <label for="inputName">Họ Và Tên</label>
+                </th>
+                <td>
+                    <input type="text" id="inputName" placeholder="Họ và tên">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="inputUserName">Username</label>
+                </th>
+                <td>
+                    <input type="text" id="inputUserName" placeholder="Nhập tên tài khoản bạn chọn">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="inputPassword">Password</label>
+                </th>
+                <td>
+                    <input type="password" id="inputPassword">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="inputConfirmPassword">Confirm Password</label>
+                </th>
+                <td>
+                    <input type="password" id="inputConfirmPassword">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="inputEmail">Email</label>
+                </th>
+                <td>
+                    <input type="Email" id="inputEmail" placeholder="Nhập email">
+                </td>
+            </tr>
+            <tr>
+                <td><button type="submit" onclick="subRegis()">Submit</button></td>
+                <td><button type="reset">Reset</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

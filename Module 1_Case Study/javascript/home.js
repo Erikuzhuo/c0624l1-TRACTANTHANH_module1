@@ -1,0 +1,57 @@
+
+let currentIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    if (index >= totalSlides) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = totalSlides - 1;
+    } else {
+        currentIndex = index;
+    }
+
+    const offset = -currentIndex * 100;
+    slides.style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+    showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+// Optionally, you can add an automatic slide change interval
+setInterval(nextSlide, 3000);
+
+// No desire location yet, change to store at console log as array
+function submitForm(){
+    // Get form data
+    let form = document.getElementById('form');
+    let formData = new FormData(form);
+    let data = {};
+    formData.forEach((value, key) => { data[key] = value; });
+    return console.log(data);
+}
+
+
+function login(){
+    document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal(){
+    document.getElementById("myModal").style.display = "none";
+}
+
+function checkLogin(){
+    let username= document.getElementById("username").value;
+    let password= document.getElementById("password").value;
+        if(username === "admin" && password === "123456"){
+            window.location.href ="http://localhost:63342/Module%201_Case%20Study/Module%201_Case%20Study/home_loged_in.html?_ijt=3t4npe8sp0g1q2i9vsbmmvaq98&_ij_reload=RELOAD_ON_SAVE"
+        }else alert('Email/Password Invalid!');
+
+    }

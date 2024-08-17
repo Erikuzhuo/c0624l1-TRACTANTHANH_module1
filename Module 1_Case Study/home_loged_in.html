@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GP_Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/slider.css">
+    <link rel="stylesheet" href="CSS/utilities.css">
+    <link rel="stylesheet" href="CSS/card.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/loginModal.css">
+    <script src="javascript/accessData.js"></script>
+    <script src="javascript/home_loged_in.js"></script>
+</head>
+<body>
+<!-- Nav Bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home_loged_in.html">MLT Fulfilment Warehouse System</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="home_loged_in.html">Home</a></li>
+                <li><a href="account_management.html">Account Setting</a></li>
+                <li><a href="customer_management.html">Customer List</a></li>
+                <li><a href="warehouse_management.html">Warehouse Management</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a onclick="logout()"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li>
+                <li>
+                    <form action="https://www.google.com/search" style="display: flex">
+                        <label><input type="search" placeholder="Tell Us What Do You Looking For? " name="q"
+                                      style="margin-top: 7%"></label>
+                        <lable><input type="submit" value="Search"
+                                      style="margin-top: 22%;background-color: gold;color: black"></lable>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close" onclick="closeModal()">&times;</span>
+        <nav>
+            <h2>Đăng Nhập</h2>
+        </nav>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label for="username">Username</label><br>
+                        <input type="text" id="username" placeholder="Nhập tài khoản đăng nhập">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password</label><br>
+                        <input type="password" id="password" placeholder="Nhập tài khoản đăng nhập">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" onclick="checkLogin()">Log-in</button>
+                        <button type="reset">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+<!-- Slider -->
+<div class="slider">
+    <div class="slides">
+        <div class="slide">
+            <img src="MLT pic/MLT1.jpg" alt="Image 1" class="sliderPic">
+        </div>
+        <div class="slide">
+            <img src="MLT pic/MLT2.jpg" alt="Image 2" class="sliderPic">
+        </div>
+        <div class="slide">
+            <img src="MLT pic/MLT3.jpg" alt="Image 3" class="sliderPic">
+        </div>
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+    <a href="mailto:louiszhuo@mltglobalx.com?subject=Your%20Subject&body=Your%20message%20here." class="email-button">
+        Inquired More
+    </a>
+    <a href="tel:+84795373128" class="call-button">
+        Call
+    </a>
+</div>
+
+<!-- About System -->
+<div class="aboutUs">
+    <table class="aboutUs">
+        <tr class="aboutUs">
+            <th class="aboutUs">
+                <h3>Về Hệ Thống </h3>
+                <h1>Quản Lý Kho Của MLT</h1>
+            </th>
+            <td class="aboutUs">
+                <pre class="aboutUs">
+                    Hệ thống quản lý kho toàn diện và tiện ích của chúng tôi, được thiết kế để <span style="color: red"> tối ưu </span> hóa quy trình lưu trữ
+                    và phân phối hàng hóa. Với tính năng theo dõi hàng tồn kho theo thời gian thực, quản lý đơn hàng hiệu quả
+                    và phân tích dữ liệu thông minh, hệ thống của chúng tôi sẽ giúp doanh nghiệp của bạn <span
+                        style="color:red"> giảm thiểu sai sót,
+                    tăng cường hiệu suất và tối ưu hóa chi phí quản lý kho.</span>
+                </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--Utilities-->
+<div class="utilities">
+    <h2 class="utilities">Các Tính Năng Tích Hợp Trên Hệ Thống</h2>
+    <div class="cardContent">
+        <a href="account_management.html" class="utilities">
+            <div class="cardFrame">
+                <img class="utilities" src="MLT pic/account.png" height="300" width="300" alt="img5"/>
+                <div class="cardBody">
+                    <h4 class="cardTitle">Account Management</h4>
+                    <p class="cardText">Thêm, Xóa hoặc điều chỉnh các thành viên được ủy quyền.</p>
+                </div>
+            </div>
+        </a>
+        <a href="customer_management.html" class="utilities">
+            <div class="cardFrame">
+                <img class="utilities" src="MLT pic/customer.jpg" height="300" width="300" alt="img6"/>
+                <div class="cardBody">
+                    <h4 class="cardTitle">Customer List</h4>
+                    <p class="cardText">Thêm, Xóa hoặc điều chỉnh thông tin khách hàng.</p>
+                </div>
+            </div>
+        </a>
+        <a href="warehouse_management.html" class="utilities">
+            <div class="cardFrame">
+                <img class="utilities" src="MLT pic/Warehouse-management-team.jpg" height="300" width="300" alt="img7"/>
+                <div class="cardBody">
+                    <h4 class="cardTitle">Warehouse Management</h4>
+                    <p class="cardText">Cập nhật tình trạng kho hàng.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<hr class="hr">
+
+<div class="contact">
+    <h2>Contact Us</h2>
+    <form action="test.html" id="form" method="post">
+        <label for="fdName">Họ và Tên:</label>
+        <input type="text" id="fdName" required>
+
+        <label for="fdEmail">Email:</label>
+        <input type="email" id="fdEmail" required>
+
+        <label for="fdMessage">Tin Nhắn:</label>
+        <textarea id="fdMessage" required></textarea>
+        <button type="button" onclick="submitForm()">Gửi Mail</button>
+    </form>
+</div>
+
+<!--footer-->
+<footer>
+    <div class="map">
+        <h2>Find Us</h2>
+
+        <iframe
+                src="https://www.google.com/maps/place/MLT+FULFILLMENT+WAREHOUSE/@10.6645874,106.5649833,4272m/data=!3m1!1e3!4m6!3m5!1s0x317533e827d8764f:0x46c4b7088696edd2!8m2!3d10.6645874!4d106.5649833!16s%2Fg%2F11w7fqd9d7?entry=ttu"
+                width="600"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+        </iframe>
+        <div class="address">
+            MLT Fulfillment Warehouse<br>
+            Địa Chỉ: XXXXXXXXXXXXXXXXXXX<br>
+            Số ĐT: XX-XXXX XXXX
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>

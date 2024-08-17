@@ -1,0 +1,47 @@
+div.infoTable{
+    width: 60%;
+    overflow-x: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.infoTable h4{
+    color: green;
+    font-style: oblique;
+    font-weight: bold;
+}
+.infoTable table{
+    width: 80%;
+    margin-left: 5%;
+}
+
+div.clientResult{
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 2%;
+
+}
+.clientResult caption{
+    font-size: medium;
+    font-weight: bolder;
+    color: red;
+}
+.infoTable th{
+    width: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    text-align: center;
+
+}
+.infoTable td{
+    vertical-align: middle;
+}
+.infoTable input{
+    vertical-align: middle;
+    width: 98%;
+}
+input.radioSize{
+    width: 10%;
+}

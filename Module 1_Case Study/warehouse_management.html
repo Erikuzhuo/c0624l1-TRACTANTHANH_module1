@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GP_Warehouse</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="javascript/class.js"></script>
+    <link rel="stylesheet" href="CSS/warehouse_management.css">
+    <script src="javascript/warehouse_management.js"></script>
+</head>
+<body>
+<!-- Nav Bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home_loged_in.html">MLT Fulfilment Warehouse System</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="home_loged_in.html">Home</a></li>
+                <li><a href="account_management.html">Account Setting</a></li>
+                <li><a href="customer_management.html">Customer List</a></li>
+                <li class="active"><a href="warehouse_management.html">Warehouse Managment</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- User and Log in href is empty for meanwhile-->
+                <li><a href="#" onclick="logout()"><span class="glyphicon glyphicon-log-out"></span>Log-Out</a></li>
+                <li>
+                    <form action="https://www.google.com/search" style="display: flex">
+                        <label><input type="search" placeholder="Tell Us What Do You Looking For? " name="q"
+                                      style="margin-top: 7%"></label>
+                        <lable><input type="submit" value="Search"
+                                      style="margin-top: 22%;background-color: gold;color: black"></lable>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Function Option-->
+<div class="functionOption">
+    <a onclick="modalOption()">
+        <div class="cardHolder">
+            <div class="cardFrame">
+                <img src="MLT pic/addProduct.jpg" height="150" width="150" alt="img8"/>
+                <div class="cardBody">
+                    <h4>Thêm Mặt Hàng</h4>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a onclick="filterItem()">
+        <div class="cardHolder">
+            <div class="cardFrame">
+                <img src="MLT pic/checkProduct.jpg" height="150" width="150" alt="img9"/>
+                <div class="cardBody">
+                    <h4>Kiểm Tra Hàng Trong Kho</h4>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+<!-- Add Product Modal-->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <form id="formModal">
+            <h4 style="display: inline">Thêm Hàng Hóa</h4>
+            <table class="formTable">
+                <tr>
+                    <th>
+                        <label for="productCode">Mã Hàng Hóa<span style="color: red;font-weight: bold">*</span></label>
+                    </th>
+                    <td><input type="text" id="productCode" onblur="checkEmptyInput(this)"></td>
+                    <th>
+                        <label for="productName">Tên Hàng Hóa<span style="color: red;font-weight: bold">*</span></label>
+                    </th>
+                    <td><input type="text" id="productName" onblur="checkEmptyInput(this)"></td>
+                    <th><label for="productType">Nhóm Hàng Hóa<span
+                            style="color: red;font-weight: bold">*</span></label></th>
+                    <td><input type="text" id="productType" onblur="checkEmptyInput(this)"></td>
+                </tr>
+                <tr>
+                    <th><label for="productUnit">Đơn Vị<span style="color: red;font-weight: bold">*</span></label></th>
+                    <td><input type="text" id="productUnit" onblur="checkEmptyInput(this)"></td>
+                    <th><label for="productSalePrice">Giá Bán<span style="color: red;font-weight: bold">*</span></label>
+                    </th>
+                    <td><input type="number" id="productSalePrice" onblur="checkEmptyInput(this)"></td>
+                    <th><label for="productCost">Giá Vốn<span style="color: red;font-weight: bold">*</span></label></th>
+                    <td><input type="number" id="productCost" onblur="checkEmptyInput(this)"></td>
+                </tr>
+                <tr>
+                    <th><label for="productDescription">Quy Cách<span
+                            style="color: red;font-weight: bold">*</span></label></th>
+                    <td><input type="text" id="productDescription" onblur="checkEmptyInput(this)"></td>
+                    <th><label for="productLocation">Vị Trí Kho<span
+                            style="color: red;font-weight: bold">*</span></label></th>
+                    <td><input type="number" id="productLocation" onblur="checkEmptyInput(this)"></td>
+                    <th><label for="productStock">Tồn Kho<span style="color: red;font-weight: bold">*</span></label>
+                    </th>
+                    <td><input type="number" id="productStock" onblur="checkEmptyInput(this)"></td>
+                </tr>
+            </table>
+            <div class="formButton">
+                <div id="addProduct">
+                    <button class="btn btn-success" type="button" value="Thêm" onclick="addItem()">
+                        Thêm
+                    </button>
+                </div>
+                <button class="btn" type="reset" Value="Làm Mới">Làm Mới</button>
+                <button class="btn btn-danger" type="button" Value="Hủy Thêm"
+                        onclick="closeModal(1)">Hủy Thêm
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Product -->
+<div class="productResult">
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Mã Hàng Hóa</th>
+            <th>Tên Hàng Hóa</th>
+            <th>Nhóm Hàng</th>
+            <th>Đơn Vị</th>
+            <th>Giá Bán</th>
+            <th>Giá Vốn</th>
+            <th>Quy Cách</th>
+            <th>Vị Trí Kho</th>
+            <th>Tồn Kho</th>
+            <th>tình trạng</th>
+            <th>Điều Chỉnh</th>
+            <th><button class="btn btn-danger" style="display: none" type="button" id="return" onclick="displayProduct()">Quay Lại</button> </th>
+        </tr>
+        </thead>
+        <tbody id="productResult"></tbody>
+    </table>
+</div>
+</body>
+</html>

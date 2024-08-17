@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GP_Customer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="javascript/class.js"></script>
+    <script src="javascript/customer_management.js"></script>
+    <link rel="stylesheet" href="CSS/customer_managment.css">
+</head>
+<body>
+<!-- Nav Bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home_loged_in.html">MLT Fulfilment Warehouse System</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="home_loged_in.html">Home</a></li>
+                <li><a href="account_management.html">Account Setting</a></li>
+                <li class="active"><a href="customer_management.html">Customer List</a></li>
+                <li><a href="warehouse_management.html">Warehouse Managment</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- User and Log in href is empty for meanwhile-->
+                <li><a href="#" onclick="logout()"><span class="glyphicon glyphicon-log-out"></span>Log-Out</a></li>
+                <li>
+                    <form action="https://www.google.com/search" style="display: flex">
+                        <label><input type="search" placeholder="Tell Us What Do You Looking For? " name="q"
+                                      style="margin-top: 7%"></label>
+                        <lable><input type="submit" value="Search"
+                                      style="margin-top: 22%;background-color: gold;color: black"></lable>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Input Information -->
+<div class="infoTable">
+    <h4>Thông Tin Khách Hàng:</h4>
+    <table>
+        <tr>
+            <th>Số Khách Hàng<span style="color: red">*</span></th>
+            <td colspan="3">
+                <label for="clientID"></label>
+                <input type="text" placeholder="Xin nhập mã số Khách Hàng" id="clientID" style="width: 99%" onblur="checkEmptyInput(this)" required>
+            </td>
+        </tr>
+        <tr>
+            <th>Số CCCD<span style="color: red">*</span></th>
+            <td>
+                <label for="clientNationID"></label>
+                <input type="text" placeholder="Xin nhập mã số CCCD" id="clientNationID" onblur="checkEmptyInput(this)" required>
+            </td>
+            <th>Họ & Tên<span style="color: red">*</span></th>
+            <td>
+                <label for="clientName"></label>
+                <input type="text" placeholder="Họ và tên" id="clientName" onblur="checkEmptyInput(this)" required>
+            </td>
+        </tr>
+        <tr>
+        <th>Giới Tính<span style="color: red">*</span></th>
+        <td>
+            <form id="clientGender" action="#" method="post">
+                <input class="radioSize" type="radio" id="radio1" name="gender" value="Nam">Nam
+                <input class="radioSize" type="radio" id="radio2" name="gender" value="Nữ">Nữ
+                <input class="radioSize" type="radio" id="radio3" name="gender" value="Khác">Khác
+            </form>
+        </td>
+        <th>Ngày Tháng Năm Sinh<span style="color: red">*</span></th>
+        <td>
+            <label for="clientBirth"></label>
+            <input type="date" id="clientBirth" onblur="checkEmptyInput(this)" required>
+        </td>
+        </tr>
+        <tr>
+            <th>Địa Chỉ<span style="color: red">*</span></th>
+            <td colspan="3">
+                <label for="clientAdd"></label>
+                <input type="text" id="clientAdd" placeholder="Số/Tòa/Đường/Phường/Quận/TP" style="width: 99%" onblur="checkEmptyInput(this)" required>
+            </td>
+        </tr>
+        <tr>
+            <th>Số ĐT<span style="color: red">*</span></th>
+            <td>
+                <label for="clientPhone"></label>
+                <input type="tel" id="clientPhone" placeholder="1234567890" onblur="checkEmptyInput(this)">
+            </td>
+            <th>Email<span style="color: red">*</span></th>
+            <td>
+                <label for="clientEmail"></label>
+                <input type="email" id="clientEmail" placeholder="@example.com" required onblur="checkEmptyInput(this)">
+            </td>
+        </tr>
+        <tr>
+            <th>Ghi Chú<span style="color: red">*</span></th>
+            <td colspan="3">
+                <label for="clientNote"></label>
+                <input type="text" id="clientNote" placeholder="Ghi Chú" style="width: 99%" onblur="checkEmptyInput(this)">
+        </tr>
+        <tr>
+            <td id="addClient">
+                <button class="btn btn-success" type="button" onclick="addClient()" >Thêm Thông Tin</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- Database -->
+<div class="clientResult">
+    <table class="table table-striped table-hover">
+        <caption>Danh Sách</caption>
+        <thead>
+        <tr>
+            <th>Số Khách Hàng</th>
+            <th>Số CCCD</th>
+            <th>Họ & Tên</th>
+            <th>Giới Tính</th>
+            <th>Ngày Tháng Năm Sinh</th>
+            <th>Địa Chỉ</th>
+            <th>Số ĐT</th>
+            <th>Email</th>
+            <th>Ghi Chú</th>
+            <th>Điều Chỉnh</th>
+        </tr>
+        </thead>
+        <tbody id="cusResult"></tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

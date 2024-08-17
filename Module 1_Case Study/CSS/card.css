@@ -1,0 +1,57 @@
+div.utilities{
+    width: 100%;
+    margin: 0 auto;
+}
+
+div.cardContent{
+    position: relative;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+
+}
+div.cardFrame{
+    position: relative;
+    display: inline-grid;
+    width: 100%;
+    height: 400px;
+    max-width: 310px;
+    margin:5%;
+
+}
+div.cardBody{
+    text-align: center;
+    color: black;
+
+
+}
+h4.cardTitle{
+    font-size: large;
+    font-weight: bold;
+    font-family: fantasy;
+    vertical-align: center;
+}
+div.cardText{
+
+}
+
+h2.utilities{
+    font-weight: bolder;
+    color: red;
+    font-family: Arial,serif ;
+    text-align: center;
+   }
+
+a.utilities{
+    margin:10px;
+}
+
+img.utilities{
+    margin:auto;
+    border-radius: 5%;
+    box-shadow: 5px 10px 0 0 lightgray;
+    border: solid black 1px;
+
+
+
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GP_Account</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/account_managment.css">
+    <script src="javascript/account_managment.js"></script>
+    <script src="javascript/class.js"></script>
+
+</head>
+<body>
+<!-- Nav Bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home_loged_in.html">MLT Fulfilment Warehouse System</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="home_loged_in.html">Home</a></li>
+                <li class="active"><a href="account_management.html">Account Setting</a></li>
+                <li><a href="customer_management.html">Customer List</a></li>
+                <li><a href="warehouse_management.html">Warehouse Managment</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- User and Log in href is empty for meanwhile-->
+                <li><a href="#" onclick="logout()"><span class="glyphicon glyphicon-log-out"></span>Log-Out</a></li>
+                <li>
+                    <form action="https://www.google.com/search" style="display: flex">
+                        <label><input type="search" placeholder="Tell Us What Do You Looking For? " name="q"
+                                      style="margin-top: 7%"></label>
+                        <lable><input type="submit" value="Search"
+                                      style="margin-top: 22%;background-color: gold;color: black"></lable>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Input Information -->
+<div class="inputAccess">
+    <h4>Thông Tin Người Dùng:</h4>
+    <table>
+        <tr>
+            <th>Số ID#<span style="color: red">*</span></th>
+            <td>
+                <label for="accessID"></label>
+                <input type="text" placeholder="Xin nhập mã số ID" id="accessID" onblur="checkEmptyInput(this)"
+                       required>
+            </td>
+        </tr>
+        <tr>
+            <th>Họ & tên<span style="color: red">*</span></th>
+            <td>
+                <label for="accessName"></label>
+                <input type="text" placeholder="Họ và tên" id="accessName" onblur="checkEmptyInput(this)" required>
+            </td>
+        </tr>
+        <tr>
+            <th>Vị trí<span style="color: red">*</span></th>
+            <td>
+                <label class="inputAccess-position" for="accessPosition">
+                    <select class="accountSelect" name="position" id="accessPosition" required>
+                        <option name="position" disabled selected hidden>--Chọn--</option>
+                        <option name="position" value="Staff">Staff</option>
+                        <option name="position" value="Supervisor">Supervisor</option>
+                        <option name="position" value="Manager">Manager</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <th>Vai trò quản lý<span style="color: red">*</span></th>
+            <td>
+                <label for="accessRole">
+                    <select class="accountSelect" name="role" id="accessRole" required>
+                        <option name="role" disabled selected hidden>--Chọn--</option>
+                        <option name="role" value="Basic">Basic</option>
+                        <option name="role" value="Admin">Admin</option>
+                        <option name="role" value="Super Admin">Super Admin</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <th>Email<span style="color: red">*</span></th>
+            <td>
+                <label for="accessEmail"></label>
+                <input type="email" id="accessEmail" placeholder="Email@Example.com" onblur="checkEmptyInput(this)"
+                       required>
+            </td>
+        </tr>
+        <tr>
+            <th>Số ĐT</th>
+            <td>
+                <label for="accessPhone"></label>
+                <input type="tel" id="accessPhone" onblur="checkEmptyInput(this)" placeholder="0123456789">
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <th>Username</th>
+            <td>
+                <label for="accessUsername"></label>
+                <input type="text" id="accessUsername" onblur="checkEmptyInput(this)" placeholder="ABCabc!">
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <th>Password</th>
+            <td>
+                <label for="accessPassword"></label>
+                <input type="password" id="accessPassword" onblur="checkEmptyInput(this)" placeholder="*******">
+            </td>
+        </tr>
+        <tr>
+            <td id="addUpdate">
+                <button class="btn btn-success" type="button" onclick="addAccess()">Thêm Người</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<hr>
+
+<!-- Database -->
+<div class="resultAccess">
+    <table class="table table-striped table-hover">
+        <caption>Danh Sách</caption>
+        <thead>
+        <tr>
+            <th>Số ID#</th>
+            <th>Họ và tên</th>
+            <th>Vị trí</th>
+            <th>Vai trò quản lý</th>
+            <th>Email</th>
+            <th>Số ĐT</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th colspan="2">Hiệu Chỉnh</th>
+        </tr>
+        </thead>
+        <tbody id="result"></tbody>
+    </table>
+</div>
+</body>
+</html>

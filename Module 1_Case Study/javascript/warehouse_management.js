@@ -31,7 +31,7 @@ function addItem() {
         productData.stock !== "" &&
         productData.price > 0 &&
         productData.cost > 0 &&
-        productData.stock > 0) {
+        productData.stock >= 0) {
         let checkLoop = false
         if (ProductList !== []) {
             for (let j of ProductList) {
@@ -52,19 +52,6 @@ function addItem() {
 }
 
 function displayProduct() {
-    for (let i = 0; i < ProductList.length; i++) {
-        if (ProductList[i].getStock() > 10) {
-            ProductList[i].setStockStatus("Còn Hàng");
-            document.getElementsByClassName('productStatus').color = "Green";
-        } else if (ProductList[i].getStock() < 10) {
-            ProductList[i].setStockStatus("Sắp Hết Hàng")
-            document.getElementsByClassName('productStatus').color = "DarkGold";
-        } else {
-            ProductList[i].setStockStatus("Hết Hàng")
-            document.getElementsByClassName('productStatus').color = "Red";
-        }
-    }
-
     let table = "<tbody>"
     for (let j = 0; j < ProductList.length; j++) {
         table += "<tr>" +
@@ -77,7 +64,7 @@ function displayProduct() {
             "<td>" + ProductList[j].getDescription() + "</td>" +
             "<td>" + ProductList[j].getLocation() + "</td>" +
             "<td>" + ProductList[j].getStock() + "</td>" +
-            "<td class='productStatus'>" + ProductList[j].getStockStatus() + "</td>" +
+            stockStatus() +
             "<td id='adjust'><button class=\"btn btn-warning\" type='button' onclick='adjustData(" + j + ")'</button>Chỉnh Sửa</td>" +
             "<td><button class=\"btn btn-danger\" type='button' onclick='deleteData(" + j + ")'</button>Xóa Mặt Hàng</td>" +
             "</tr>" +
@@ -94,6 +81,22 @@ function displayProduct() {
     document.getElementById('productLocation').value = "";
     document.getElementById('productStock').value = "";
     document.getElementById('return').style.display = "none";
+
+}
+
+function stockStatus() {
+    for (let i = 0; i < ProductList.length; i++) {
+        if (ProductList[i].getStock() === 0) {
+            ProductList[i].setStockStatus("Hết Hàng")
+            return '"<td style="color:red;">"' + ProductList[i].getStockStatus() + '"</td>" '
+        } else if (ProductList[i].getStock() < 10) {
+            ProductList[i].setStockStatus("Gần Hết Hàng")
+            return '"<td style="color:darkgoldenrod;">"' + ProductList[i].getStockStatus()+'"</td>" '
+        } else if(ProductList[i].getStock() > 10) {
+            ProductList[i].setStockStatus("Còn Hàng")
+            return '"<td style="color:green;">"' + ProductList[i].getStockStatus()+'"</td>" '
+        }
+    }
 }
 
 function deleteData(number) {
@@ -179,7 +182,7 @@ function filterItem() {
     let CheckArrays = [];
     if (num > 0) {
         for (let i = 1; i <= num; i++) {
-            let checkElement = prompt("Nhập Mã Hàng Bạn Muốn Tìm "+i+":")
+            let checkElement = prompt("Nhập Mã Hàng Bạn Muốn Tìm " + i + ":")
             CheckArrays.push(checkElement)
         }
 
@@ -219,8 +222,7 @@ function filterItem() {
             filterItem()
         }
 
-    } else {
+    }else if(num<0) {
         alert('Xin Mời Nhập Đúng Giá Trị')
-        filterItem()
     }
 }
